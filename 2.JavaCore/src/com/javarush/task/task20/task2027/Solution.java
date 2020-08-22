@@ -1,10 +1,13 @@
 package com.javarush.task.task20.task2027;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /* 
 Кроссворд
 */
+//сам не смог 22.08.2020. Попробовать еще раз.
+
 public class Solution {
     public static void main(String[] args) {
         int[][] crossword = new int[][]{
@@ -24,7 +27,39 @@ same - (1, 1) - (4, 1)
 
     public static List<Word> detectAllWords(int[][] crossword, String... words) {
 
-        return null;
+        List<Word> wordList = new ArrayList<>();
+
+        int[] dx = new int[] { 0,  1, 1, 1, 0, -1, -1, -1};
+        int[] dy = new int[] {-1, -1, 0, 1, 1,  1,  0, -1};
+
+        for (String s : words) {
+            char[] c = s.toCharArray();
+            for (int y = 0; y < crossword.length; y++) {
+                for (int x = 0; x < crossword[y].length; x++) {
+                    if (crossword[y][x] == c[0]) {
+                        for (int i = 0; i < dx.length; i++) {
+                            boolean wordFound = true;
+                            for (int j = 1; j < c.length; j++) {
+                                if (y + dy[i] * j < 0 || y + dy[i] * j >= crossword.length ||
+                                        x + dx[i] * j < 0 || x + dx[i] * j >= crossword[y + dy[i] * j].length ||
+                                        crossword[y + dy[i] * j][x + dx[i] * j] != c[j]) {
+                                    wordFound = false;
+                                    break;
+                                }
+                            }
+                            if (wordFound) {
+                                Word w = new Word(s);
+                                w.setStartPoint(x, y);
+                                w.setEndPoint(x + dx[i] * (c.length - 1), y + dy[i] * (c.length - 1));
+                                wordList.add(w);
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        return wordList;
     }
 
     public static class Word {
