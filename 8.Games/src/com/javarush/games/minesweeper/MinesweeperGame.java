@@ -78,59 +78,46 @@ public class MinesweeperGame extends Game {
 
     private void openTile(int x, int y) {
         GameObject field = gameField[y][x];
-        field.isOpen = true;
-        setCellColor(x, y, Color.GREEN);
 
-        if (field.isMine) {
-            //setCellValue(x, y, MINE);
-            setCellValueEx(x, y, Color.RED, MINE);
-            gameOver();
-        }
+        if (!field.isOpen && !field.isFlag && !isGameStopped) {
 
-        if (!field.isMine) {
-            setCellNumber(x, y, field.countMineNeighbors);
+            field.isOpen = true;
+            setCellColor(x, y, Color.GREEN);
 
-            if (field.countMineNeighbors == 0) {
-                setCellValue(x, y, "");
-                List<GameObject> neighbours = getNeighbors(field);
-                for (int i = 0; i < neighbours.size(); i++) {
-                    if (!neighbours.get(i).isOpen && !neighbours.get(i).isMine) {
-                        openTile(neighbours.get(i).x, neighbours.get(i).y);
+            if (field.isMine) {
+                //setCellValue(x, y, MINE);
+                setCellValueEx(x, y, Color.RED, MINE);
+                gameOver();
+            } else {
+                setCellNumber(x, y, field.countMineNeighbors);
+                if (!field.isMine && field.countMineNeighbors != 0) {
+                    setCellNumber(x, y, field.countMineNeighbors);
+                } else if (field.countMineNeighbors == 0) {
+                    setCellValue(x, y, "");
+                    List<GameObject> neighbours = getNeighbors(field);
+                    for (int i = 0; i < neighbours.size(); i++) {
+                        if (!neighbours.get(i).isOpen && !neighbours.get(i).isMine) {
+                            openTile(neighbours.get(i).x, neighbours.get(i).y);
+                        }
                     }
                 }
             }
-        }
 
-        if (!field.isMine && field.countMineNeighbors != 0) {
-            setCellNumber(x, y, field.countMineNeighbors);
+
         }
     }
 
 
-    /*
-    2. Метод markTile(int x, int y) не должен ничего делать, если элемент уже открыт (isOpen == true).
-    3. Метод markTile(int, int) не должен ничего делать, если количество неиспользованных флагов countFlags равно нулю,
-     и текущий элемент — не флаг (isFlag = false).
-    4. Метод markTile(int, int) должен устанавливать значение поля isFlag в true, уменьшать количество неиспользованных
-     флагов на единицу, отрисовывать на поле знак FLAG, если текущий элемент — не флаг
-      (используй метод setCellValue(int, int, String)) и менять фон ячейки на поле, используя метод setCellColor(int, int, Color).
-      Например, в Color.YELLOW.
-    5. Метод markTile(int, int) должен устанавливать значение поля isFlag в false, увеличивать количество неиспользованных
-    флагов на единицу, отрисовывать на поле пустую ячейку, если текущий элемент — флаг
-    (используй метод setCellValue(int, int, String)) и возвращать исходный цвет ячейки
-    (используй метод setCellColor(int, int, Color)).
-     */
+
     private void markTile(int x, int y) {
         GameObject currentField = gameField[y][x];
         if (!currentField.isOpen && !isGameStopped) {
-            if (currentField.isFlag){
+            if (currentField.isFlag) {
                 currentField.isFlag = false;
                 countFlags++;
                 setCellValue(x, y, "");
                 setCellColor(x, y, Color.ORANGE);
-            }
-
-            else if (countFlags > 0) {
+            } else if (countFlags > 0) {
                 currentField.isFlag = true;
                 countFlags--;
                 setCellValue(x, y, FLAG);
