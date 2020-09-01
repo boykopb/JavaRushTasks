@@ -24,8 +24,10 @@ public class FakeModel implements Model {
         modelData.setUsers(users);
     }
 
-    public void
-    loadDeletedUsers() {
+    public void loadDeletedUsers() {
+        throw new UnsupportedOperationException();
+    }
+    public void loadUserById(long userId) {
         throw new UnsupportedOperationException();
     }
 

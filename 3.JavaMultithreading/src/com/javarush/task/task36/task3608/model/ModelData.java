@@ -34,4 +34,7 @@ public class ModelData {
     public void setDisplayDeletedUserList(boolean displayDeletedUserList) {
         this.displayDeletedUserList = displayDeletedUserList;
     }
+
+
+
 }
