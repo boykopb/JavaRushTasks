@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FakeModel implements Model {
-    private ModelData modelData;
+    private ModelData modelData = new ModelData();
 
 
     @Override
@@ -16,11 +16,17 @@ public class FakeModel implements Model {
 
     @Override
     public void loadUsers() {
-        List<User> usersModelData = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            usersModelData.add(new User());
-        }
+        List<User> users = new ArrayList<>();
+        users.add(new User("A", 1, 1));
+        users.add(new User("B", 2, 1));
+        modelData.setUsers(users);
 
-        modelData.setUsers(usersModelData);
+        modelData.setUsers(users);
     }
+
+    public void
+    loadDeletedUsers() {
+        throw new UnsupportedOperationException();
+    }
+
 }

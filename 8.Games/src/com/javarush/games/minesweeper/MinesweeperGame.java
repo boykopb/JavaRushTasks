@@ -86,7 +86,7 @@ public class MinesweeperGame extends Game {
             setCellNumber(x, y, field.countMineNeighbors);
 
             if (field.countMineNeighbors == 0) {
-                setCellValue(x,y, "");
+                setCellValue(x, y, "");
                 List<GameObject> neighbours = getNeighbors(field);
                 for (int i = 0; i < neighbours.size(); i++) {
                     if (!neighbours.get(i).isOpen && !neighbours.get(i).isMine) {
@@ -101,8 +101,48 @@ public class MinesweeperGame extends Game {
         }
     }
 
+
+    /*
+    2. Метод markTile(int x, int y) не должен ничего делать, если элемент уже открыт (isOpen == true).
+    3. Метод markTile(int, int) не должен ничего делать, если количество неиспользованных флагов countFlags равно нулю,
+     и текущий элемент — не флаг (isFlag = false).
+    4. Метод markTile(int, int) должен устанавливать значение поля isFlag в true, уменьшать количество неиспользованных
+     флагов на единицу, отрисовывать на поле знак FLAG, если текущий элемент — не флаг
+      (используй метод setCellValue(int, int, String)) и менять фон ячейки на поле, используя метод setCellColor(int, int, Color).
+      Например, в Color.YELLOW.
+    5. Метод markTile(int, int) должен устанавливать значение поля isFlag в false, увеличивать количество неиспользованных
+    флагов на единицу, отрисовывать на поле пустую ячейку, если текущий элемент — флаг
+    (используй метод setCellValue(int, int, String)) и возвращать исходный цвет ячейки
+    (используй метод setCellColor(int, int, Color)).
+     */
+    private void markTile(int x, int y) {
+        GameObject currentField = gameField[y][x];
+        if (!currentField.isOpen) {
+            if (currentField.isFlag){
+                currentField.isFlag = false;
+                countFlags++;
+                setCellValue(x, y, "");
+                setCellColor(x, y, Color.ORANGE);
+            }
+
+            else if (countFlags > 0) {
+                currentField.isFlag = true;
+                countFlags--;
+                setCellValue(x, y, FLAG);
+                setCellColor(x, y, Color.YELLOW);
+            }
+
+        }
+
+    }
+
     @Override
     public void onMouseLeftClick(int x, int y) {
         openTile(x, y);
+    }
+
+    @Override
+    public void onMouseRightClick(int x, int y) {
+        markTile(x, y);
     }
 }
