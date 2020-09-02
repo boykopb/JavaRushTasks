@@ -2,9 +2,10 @@ package com.javarush.games.snake;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.javarush.engine.cell.*;
 
-public class Snake extends GameObject{
+public class Snake extends GameObject {
 
     private List<GameObject> snakeParts = new ArrayList<>();
     private static final String HEAD_SIGN = "\uD83D\uDC7E";
@@ -30,8 +31,7 @@ public class Snake extends GameObject{
         for (int i = 0; i < snakeParts.size(); i++) {
             if (i == 0) {
                 game.setCellValueEx(snakeParts.get(i).x, snakeParts.get(i).y, Color.NONE, HEAD_SIGN, color, 75);
-            }
-            else {
+            } else {
                 game.setCellValueEx(snakeParts.get(i).x, snakeParts.get(i).y, Color.NONE, BODY_SIGN, color, 75);
             }
         }
@@ -41,28 +41,60 @@ public class Snake extends GameObject{
         GameObject snakeHead = snakeParts.get(0);
         GameObject object = null;
 
-        if (this.direction == Direction.LEFT) object = new GameObject(snakeHead.x-1, snakeHead.y);
-        if (this.direction == Direction.RIGHT) object = new GameObject(snakeHead.x+1, snakeHead.y);
-        if (this.direction == Direction.DOWN) object = new GameObject(snakeHead.x, snakeHead.y+1);
-        if (this.direction == Direction.UP) object = new GameObject(snakeHead.x, snakeHead.y-1);
+        if (this.direction == Direction.LEFT) object = new GameObject(snakeHead.x - 1, snakeHead.y);
+        if (this.direction == Direction.RIGHT) object = new GameObject(snakeHead.x + 1, snakeHead.y);
+        if (this.direction == Direction.DOWN) object = new GameObject(snakeHead.x, snakeHead.y + 1);
+        if (this.direction == Direction.UP) object = new GameObject(snakeHead.x, snakeHead.y - 1);
 
 
         return object;
     }
 
     public void removeTail() {
-        snakeParts.remove(snakeParts.get(snakeParts.size()-1));
+        snakeParts.remove(snakeParts.get(snakeParts.size() - 1));
     }
 
-    public void move(){
+    public void move(Apple apple) {
         GameObject head = createNewHead();
-        if(head.x < 0 || head.x > SnakeGame.WIDTH - 1
-                || head.y < 0 || head.y > SnakeGame.HEIGHT - 1) {
-            isAlive = false;
-        } else {
+
+        //съела яблоко = подросла
+        if (head.x == apple.x && head.y == apple.y) {
+            apple.isAlive = false;
             snakeParts.add(0, head);
-            removeTail();
+            return;
         }
+
+        //стукнулась об стены = смерть;
+        if (head.x < 0 || head.x > SnakeGame.WIDTH - 1
+                || head.y < 0 || head.y > SnakeGame.HEIGHT - 1) {
+            this.isAlive = false;
+            return;
+        }
+
+        //стукнулась об себя = смерть;
+        if (checkCollision(createNewHead())) {
+            this.isAlive = false;
+            return;
+        }
+
+        snakeParts.add(0, head);
+        removeTail();
+
+
+    }
+
+
+    public boolean checkCollision(GameObject gameObject) {
+        boolean isCollision = false;
+        for (int i = 0; i < snakeParts.size(); i++) {
+            GameObject snakePart = snakeParts.get(i);
+            if (snakePart.x == gameObject.x && snakePart.y == gameObject.y) {
+                isCollision = true;
+                break;
+            }
+        }
+
+        return isCollision;
 
     }
 
