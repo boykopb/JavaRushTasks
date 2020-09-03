@@ -2,12 +2,13 @@ package com.javarush.games.minesweeper;
 
 import com.javarush.engine.cell.Color;
 import com.javarush.engine.cell.Game;
+import com.javarush.engine.cell.Key;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MinesweeperGame extends Game {
-    private static final int SIDE = 18;
+    private static final int SIDE = 21;
     private GameObject[][] gameField = new GameObject[SIDE][SIDE];
     private int countMinesOnField;
     private static final String MINE = "\uD83D\uDCA3";
@@ -15,11 +16,11 @@ public class MinesweeperGame extends Game {
     private int countFlags;
     private int countClosedTiles = SIDE * SIDE;
     private boolean isGameStopped;
+    private boolean isWin;
+
+    private int countOfTry;
 
     private int score;
-
-
-
 
 
     @Override
@@ -42,29 +43,52 @@ public class MinesweeperGame extends Game {
         }
         countMineNeighbors();
         countFlags = countMinesOnField;
+        countOfTry = 3;
+
 
     }
 
     private void gameOver() {
         isGameStopped = true;
-        showMessageDialog(Color.CRIMSON, "  BOOM!!!\nTry again?", Color.BLACK, 25);
+        if (countOfTry == 0) {
+            showMessageDialog(Color.CRIMSON,
+                    "Maybe next time..." +
+                            "\n   Score " + score,
+                    Color.BLACK, 25);
+            return;
+        }
+        showMessageDialog(Color.CRIMSON,
+                "  Ooops...." +
+                        "\nTries left: " + countOfTry,
+                Color.BLACK, 25);
 
+    }
+
+    private void tryAgain() {
+        isGameStopped = false;
     }
 
 
     private void win() {
         isGameStopped = true;
-        showMessageDialog(Color.GOLD, "YOU WIN!!!", Color.BLACK, 25);
+        isWin = true;
 
+        String textUsual = String.format(
+                "  YOU WIN!" +
+                        "\nTries left = %d" +
+                        "\n Score = %d", countOfTry, score);
+
+        showMessageDialog(Color.LAVENDER, textUsual, Color.BLACK, 25);
     }
 
 
     private void restart() {
 
         isGameStopped = false;
+        isWin = false;
         countClosedTiles = SIDE * SIDE;
-        score  = 0;
-        countMinesOnField =0;
+        score = 0;
+        countMinesOnField = 0;
         countFlags = 0;
         setScore(score);
         createGame();
@@ -118,25 +142,35 @@ public class MinesweeperGame extends Game {
 
         field.isOpen = true;
         countClosedTiles--;
+
+
         if (!field.isMine) {
-            score +=5;
+            score += 5;
             setScore(score);
         }
 
-        
         if (field.isMine) {
+            countOfTry--;
             setCellValueEx(x, y, Color.RED, MINE);
 
+            //если отрываем последний tile, а там мина, но еще есть попытки => победа
+            if (countClosedTiles == countMinesOnField && countOfTry > -1) {
+                win();
+                return;
+            }
+            //иначе = проиграли
             gameOver();
             return;
         }
-        if (countClosedTiles  == countMinesOnField) {
+
+        if (countClosedTiles == countMinesOnField) {
             win();
         }
 
+
         if (field.countMineNeighbors == 0) {
             getNeighbors(field).forEach(neighbour -> openTile(neighbour.x, neighbour.y));
-            setCellValueEx(x, y, Color.GREENYELLOW ,"");
+            setCellValueEx(x, y, Color.GREENYELLOW, "");
             return;
         }
 
@@ -167,19 +201,24 @@ public class MinesweeperGame extends Game {
 
     @Override
     public void onMouseLeftClick(int x, int y) {
-        if (isGameStopped) {
-            restart();
-        } else {
-            openTile(x, y);
-
+        if (isGameStopped && countOfTry > 0 && !isWin) {
+            tryAgain();
+            return;
         }
+
+        if (isGameStopped && countOfTry == 0 || isWin) {
+            restart();
+            return;
+        }
+
+
+        openTile(x, y);
+
+
     }
 
     @Override
     public void onMouseRightClick(int x, int y) {
         markTile(x, y);
     }
-
-
-
 }
