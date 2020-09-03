@@ -19,10 +19,29 @@ public class Snake extends GameObject {
     }
 
     public void setDirection(Direction direction) {
-        if (this.direction == Direction.DOWN && !(direction == Direction.UP)) this.direction = direction;
-        if (this.direction == Direction.UP && !(direction == Direction.DOWN)) this.direction = direction;
-        if (this.direction == Direction.RIGHT && !(direction == Direction.LEFT)) this.direction = direction;
-        if (this.direction == Direction.LEFT && !(direction == Direction.RIGHT)) this.direction = direction;
+        if (snakeParts.get(0).x != snakeParts.get(1).x) {
+            if (this.direction == Direction.RIGHT && !(direction == Direction.LEFT)) {
+                this.direction = direction;
+                return;
+            }
+
+            if (this.direction == Direction.LEFT && !(direction == Direction.RIGHT)) {
+                this.direction = direction;
+                return;
+
+            }
+        }
+
+        if (snakeParts.get(0).y != snakeParts.get(1).y) {
+            if (this.direction == Direction.DOWN && !(direction == Direction.UP)) {
+                this.direction = direction;
+                return;
+
+            }
+            if (this.direction == Direction.UP && !(direction == Direction.DOWN)) {
+                this.direction = direction;
+            }
+        }
 
     }
 
@@ -93,9 +112,12 @@ public class Snake extends GameObject {
                 break;
             }
         }
-
         return isCollision;
+    }
 
+
+    public int getLength() {
+        return snakeParts.size();
     }
 
 }

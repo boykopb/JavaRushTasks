@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MinesweeperGame extends Game {
-    private static final int SIDE = 21;
+    private static final int SIDE = 19;
     private GameObject[][] gameField = new GameObject[SIDE][SIDE];
     private int countMinesOnField;
     private static final String MINE = "\uD83D\uDCA3";
@@ -53,7 +53,7 @@ public class MinesweeperGame extends Game {
         if (countOfTry == 0) {
             showMessageDialog(Color.CRIMSON,
                     "Maybe next time..." +
-                            "\n   Score " + score,
+                            "\n   Score = " + score,
                     Color.BLACK, 25);
             return;
         }
@@ -72,13 +72,8 @@ public class MinesweeperGame extends Game {
     private void win() {
         isGameStopped = true;
         isWin = true;
-
-        String textUsual = String.format(
-                "  YOU WIN!" +
-                        "\nTries left = %d" +
-                        "\n Score = %d", countOfTry, score);
-
-        showMessageDialog(Color.LAVENDER, textUsual, Color.BLACK, 25);
+        showMessageDialog(Color.LAVENDER,"  YOU WIN!" +
+                "\n Score = "+ score, Color.BLACK, 25);
     }
 
 
