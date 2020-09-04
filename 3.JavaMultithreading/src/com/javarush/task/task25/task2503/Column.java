@@ -1,5 +1,7 @@
 package com.javarush.task.task25.task2503;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public enum Column implements Columnable{
 
     private static int[] realOrder;
 
-    private Column(String columnName) {
+     Column(String columnName) {
         this.columnName = columnName;
     }
 
@@ -28,6 +30,7 @@ public enum Column implements Columnable{
         realOrder = new int[values().length];
         for (Column column : values()) {
             realOrder[column.ordinal()] = -1;
+
             boolean isFound = false;
 
             for (int i = 0; i < newOrder.length; i++) {
@@ -36,6 +39,7 @@ public enum Column implements Columnable{
                         throw new IllegalArgumentException("Column '" + column.columnName + "' is already configured.");
                     }
                     realOrder[column.ordinal()] = i;
+
                     isFound = true;
                 }
             }
@@ -48,25 +52,51 @@ public enum Column implements Columnable{
      *
      * @return список колонок
      */
+
     public static List<Column> getVisibleColumns() {
+
+        Column [] cl = new  Column[4];
         List<Column> result = new LinkedList<>();
+        for (int i = 0; i < realOrder.length; i++)
+        {
+            if (realOrder[i] != - 1){
+                cl[realOrder[i]] = Column.values()[i];}
+        }
+        for (int i = 0; i < cl.length; i++ ){
+            if (cl[i] != null)
+                result.add(cl[i]);
+        }
 
         return result;
     }
 
 
+    /**
+     * @return полное имя колонки
+     */
     @Override
     public String getColumnName() {
         return this.columnName;
     }
 
+    /**
+     * Возвращает true, если колонка видимая, иначе false
+     */
     @Override
     public boolean isShown() {
-        return false;
+        return realOrder[this.ordinal()] !=-1;
     }
+
+    /**
+     * Скрывает колонку - маркирует колонку -1 в массиве realOrder.
+     * Сдвигает индексы отображаемых колонок, которые идут после скрытой
+     */
 
     @Override
     public void hide() {
+    realOrder[this.ordinal()] = -1;
 
     }
+
+
 }
