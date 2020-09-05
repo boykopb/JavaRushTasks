@@ -84,9 +84,9 @@ public class Game2048 extends Game {
 
     private boolean compressRow(int[] row) {
         boolean hasMoved = false;
-        for (int i = 0; i < row.length; i++){
-            for (int j = i + 1; j < row.length; j++){
-                if (row[i] == 0 && row[j] != 0){
+        for (int i = 0; i < row.length; i++) {
+            for (int j = i + 1; j < row.length; j++) {
+                if (row[i] == 0 && row[j] != 0) {
                     row[i] = row[j];
                     row[j] = 0;
                     hasMoved = true;
@@ -95,5 +95,105 @@ public class Game2048 extends Game {
         }
         return hasMoved;
     }
+
+
+    private boolean mergeRow(int[] row) {
+
+        boolean hasMerged = false;
+        for (int i = 0; i < row.length - 1; i++) {
+            if (row[i] != 0 && row[i] == row[i + 1]) {
+                row[i] = row[i] * 2;
+                row[i + 1] = 0;
+                hasMerged = true;
+            }
+        }
+        return hasMerged;
+    }
+
+    @Override
+    public void onKeyPress(Key key) {
+        switch (key) {
+            case LEFT:
+                moveLeft();
+                drawScene();
+                break;
+            case RIGHT:
+                moveRight();
+                drawScene();
+                break;
+            case UP:
+                moveUp();
+                drawScene();
+                break;
+            case DOWN:
+                moveDown();
+                drawScene();
+                break;
+        }
+    }
+
+
+    private void rotateClockwise (){
+        int[][] newGameField =  new int[SIDE][SIDE];
+        for (int i = 0; i < SIDE/2; i++) {
+            for (int j = i; j < SIDE-i-1; j++) {
+                int tmp = gameField[i][j];
+                newGameField[i][j]=gameField[SIDE-j-1][i];
+                newGameField[SIDE-j-1][i]=gameField[SIDE-i-1][SIDE-j-1];
+                newGameField[SIDE-i-1][SIDE-j-1]=gameField[j][SIDE-i-1];
+                newGameField[j][SIDE-i-1]=tmp;
+            }
+        }
+        gameField = newGameField;
+    }
+
+
+    private void moveLeft() {
+        int countOfActions = 0;
+        for (int i = 0; i < SIDE; i++) {
+
+            if (compressRow(gameField[i])) {
+                countOfActions++;
+            }
+            if (mergeRow(gameField[i])) {
+                compressRow(gameField[i]);
+                countOfActions++;
+            }
+
+
+        }
+        if (countOfActions > 0) createNewNumber();
+
+    }
+
+    private void moveRight() {
+        rotateClockwise();
+        rotateClockwise();
+        moveLeft();
+        rotateClockwise();
+        rotateClockwise();
+
+
+    }
+
+
+    private void moveUp() {
+        rotateClockwise();
+        rotateClockwise();
+        rotateClockwise();
+        moveLeft();
+        rotateClockwise();
+    }
+
+    private void moveDown() {
+        rotateClockwise();
+        moveLeft();
+        rotateClockwise();
+        rotateClockwise();
+        rotateClockwise();
+    }
+
+
+
 
 }
