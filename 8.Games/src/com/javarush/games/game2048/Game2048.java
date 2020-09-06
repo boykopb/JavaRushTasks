@@ -2,13 +2,22 @@ package com.javarush.games.game2048;
 
 import com.javarush.engine.cell.*;
 
+import java.util.Arrays;
+
 public class Game2048 extends Game {
     private static final int SIDE = 4;
     private int[][] gameField = new int[SIDE][SIDE];
+    private boolean isGameStopped = false;
+    private int score = 0;
+
 
     private void createGame() {
+        //создаем матрицу заново;
+        gameField = new int[SIDE][SIDE];
+        //создаем 2 числа;
         createNewNumber();
         createNewNumber();
+
     }
 
     private void drawScene() {
@@ -16,7 +25,6 @@ public class Game2048 extends Game {
             for (int x = 0; x < gameField[y].length; x++) {
                 setCellColoredNumber(x, y, gameField[y][x]);
             }
-
         }
     }
 
@@ -30,6 +38,9 @@ public class Game2048 extends Game {
     private void createNewNumber() {
         int randomX;
         int randomY;
+        if (getMaxTileValue() == 2048) {
+            win();
+        }
 
         do {
             randomX = getRandomNumber(SIDE);
@@ -46,12 +57,11 @@ public class Game2048 extends Game {
 
 
     private Color getColorByValue(int value) {
-
         switch (value) {
             case 2:
                 return Color.FIREBRICK;
             case 4:
-                return Color.GOLD;
+                return Color.FUCHSIA;
             case 8:
                 return Color.BISQUE;
             case 16:
@@ -78,7 +88,6 @@ public class Game2048 extends Game {
     private void setCellColoredNumber(int x, int y, int value) {
         String valueOfCell = "";
         if (value != 0) valueOfCell = String.valueOf(value);
-
         setCellValueEx(x, y, getColorByValue(value), valueOfCell);
     }
 
@@ -98,11 +107,12 @@ public class Game2048 extends Game {
 
 
     private boolean mergeRow(int[] row) {
-
         boolean hasMerged = false;
         for (int i = 0; i < row.length - 1; i++) {
             if (row[i] != 0 && row[i] == row[i + 1]) {
                 row[i] = row[i] * 2;
+                score += row[i];
+                setScore(score);
                 row[i + 1] = 0;
                 hasMerged = true;
             }
@@ -112,36 +122,56 @@ public class Game2048 extends Game {
 
     @Override
     public void onKeyPress(Key key) {
-        switch (key) {
-            case LEFT:
-                moveLeft();
+        //проверяем есть ли возможность хода
+        if (!canUserMove()) {
+            gameOver();
+            //рестарт игры, если проиграли (по кнопке SPACE)
+            if (key == Key.SPACE) {
+                showMessageDialog(Color.GOLD, "", Color.BLACK, 25);
+                isGameStopped = false;
+                createGame();
                 drawScene();
-                break;
-            case RIGHT:
-                moveRight();
-                drawScene();
-                break;
-            case UP:
-                moveUp();
-                drawScene();
-                break;
-            case DOWN:
-                moveDown();
-                drawScene();
-                break;
+                score = 0;
+                setScore(score);
+            }
+            return;
         }
+        //кнопки работают только если еще не проиграли
+        if (!isGameStopped) {
+            System.out.println("key= " + key);
+            switch (key) {
+                case LEFT:
+                    moveLeft();
+                    drawScene();
+                    break;
+                case RIGHT:
+                    moveRight();
+                    drawScene();
+                    break;
+                case UP:
+                    moveUp();
+                    drawScene();
+                    break;
+                case DOWN:
+                    moveDown();
+                    drawScene();
+                    break;
+            }
+        }
+
+
     }
 
 
-    private void rotateClockwise (){
-        int[][] newGameField =  new int[SIDE][SIDE];
-        for (int i = 0; i < SIDE/2; i++) {
-            for (int j = i; j < SIDE-i-1; j++) {
+    private void rotateClockwise() {
+        int[][] newGameField = new int[SIDE][SIDE];
+        for (int i = 0; i < SIDE / 2; i++) {
+            for (int j = i; j < SIDE - i - 1; j++) {
                 int tmp = gameField[i][j];
-                newGameField[i][j]=gameField[SIDE-j-1][i];
-                newGameField[SIDE-j-1][i]=gameField[SIDE-i-1][SIDE-j-1];
-                newGameField[SIDE-i-1][SIDE-j-1]=gameField[j][SIDE-i-1];
-                newGameField[j][SIDE-i-1]=tmp;
+                newGameField[i][j] = gameField[SIDE - j - 1][i];
+                newGameField[SIDE - j - 1][i] = gameField[SIDE - i - 1][SIDE - j - 1];
+                newGameField[SIDE - i - 1][SIDE - j - 1] = gameField[j][SIDE - i - 1];
+                newGameField[j][SIDE - i - 1] = tmp;
             }
         }
         gameField = newGameField;
@@ -159,8 +189,6 @@ public class Game2048 extends Game {
                 compressRow(gameField[i]);
                 countOfActions++;
             }
-
-
         }
         if (countOfActions > 0) createNewNumber();
 
@@ -172,10 +200,7 @@ public class Game2048 extends Game {
         moveLeft();
         rotateClockwise();
         rotateClockwise();
-
-
     }
-
 
     private void moveUp() {
         rotateClockwise();
@@ -193,7 +218,39 @@ public class Game2048 extends Game {
         rotateClockwise();
     }
 
+    private int getMaxTileValue() {
+        int maxValue = 0;
+        for (int i = 0; i < gameField.length; i++) {
+            for (int j = 0; j < gameField[i].length; j++) {
+                if (gameField[j][i] > maxValue) maxValue = gameField[j][i];
+            }
+        }
+        return maxValue;
+    }
 
+    private void win() {
+        isGameStopped = true;
+        showMessageDialog(Color.GOLD, "YOU WIN!", Color.BLACK, 25);
+    }
 
+    private void gameOver() {
+        isGameStopped = true;
+        showMessageDialog(Color.GOLD, "GAME OVER!", Color.BLACK, 25);
+    }
 
+    private boolean canUserMove() {
+        for (int i = 0; i < SIDE; i++) {
+            for (int j = 0; j < SIDE; j++) {
+                //если есть клетка со значением = 0, можем играть дальше
+                if (gameField[i][j] == 0) return true;
+
+                //если значения в соседних клетках (горизонталь) равны, можем играть дальше
+                if (i < SIDE - 1 && gameField[i][j] == gameField[i + 1][j]) return true;
+
+                //если значения в соседних клетках (вертикаль) равны, можем играть дальше
+                if (j < SIDE - 1 && gameField[i][j] == gameField[i][j + 1]) return true;
+            }
+        }
+        return false;
+    }
 }
