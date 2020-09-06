@@ -8,13 +8,17 @@ public class Game2048 extends Game {
     private static final int SIDE = 4;
     private int[][] gameField = new int[SIDE][SIDE];
     private boolean isGameStopped = false;
-    private int score = 0;
+    private int score;
 
 
     private void createGame() {
         //создаем матрицу заново;
         gameField = new int[SIDE][SIDE];
+        //счет = 0;
+        score = 0;
+        setScore(score);
         //создаем 2 числа;
+
         createNewNumber();
         createNewNumber();
 
@@ -59,7 +63,7 @@ public class Game2048 extends Game {
     private Color getColorByValue(int value) {
         switch (value) {
             case 2:
-                return Color.FIREBRICK;
+                return Color.TURQUOISE;
             case 4:
                 return Color.FUCHSIA;
             case 8:
@@ -131,14 +135,12 @@ public class Game2048 extends Game {
                 isGameStopped = false;
                 createGame();
                 drawScene();
-                score = 0;
-                setScore(score);
+                return;
             }
             return;
         }
         //кнопки работают только если еще не проиграли
         if (!isGameStopped) {
-            System.out.println("key= " + key);
             switch (key) {
                 case LEFT:
                     moveLeft();
@@ -158,8 +160,6 @@ public class Game2048 extends Game {
                     break;
             }
         }
-
-
     }
 
 

@@ -14,8 +14,7 @@ public class Solution extends TimerTask {
             throw new NullPointerException();
         }
         this.original = original;
-        this.handler =  (t,e)-> System.out.println(e.getMessage().replace(t.getName(), t.getName().replaceAll(".","*")));
-
+        this.handler = null;    //init handler here
     }
 
     public void run() {
@@ -36,7 +35,5 @@ public class Solution extends TimerTask {
     }
 
     public static void main(String[] args) {
-
-
     }
 }
