@@ -10,23 +10,49 @@ public class University {
     private List<Student> students = new ArrayList<>();
 
     public University(String name, int age) {
-
         this.name = name;
         this.age = age;
     }
 
-    public Student getStudentWithAverageGrade() {
-        //TODO:
-        return null;
+    public Student getStudentWithAverageGrade(double averageGrade) {
+        Student studentResult = null;
+        for (Student student: students) {
+            if (student.getAverageGrade() == averageGrade) studentResult= student;
+        }
+        return studentResult;
     }
 
-    public Student getStudentWithMaxAverageGrade(double averageGrade) {
-        //TODO:
-        return null;
+    public Student getStudentWithMaxAverageGrade() {
+
+        double maxAverageGrade = Double.MIN_VALUE;
+        Student studentMax = null;
+
+        for (Student student: students) {
+            if (student.getAverageGrade() > maxAverageGrade) maxAverageGrade = student.getAverageGrade();
+        }
+
+        for (Student student: students) {
+            if (student.getAverageGrade() == maxAverageGrade) studentMax = student;
+        }
+        return studentMax;
     }
 
-    public void getStudentWithMinAverageGradeAndExpel() {
-        //TODO:
+    public Student getStudentWithMinAverageGrade() {
+        double minAverageGrade = Double.MAX_VALUE;
+        Student studentMin = null;
+
+        for (Student student: students) {
+            if (student.getAverageGrade() < minAverageGrade) minAverageGrade = student.getAverageGrade();
+        }
+
+        for (Student student: students) {
+            if (student.getAverageGrade() == minAverageGrade) studentMin = student;
+        }
+        return studentMin;
+
+    }
+    public void expel(Student student) {
+        students.remove(student);
     }
 
     public String getName() {
