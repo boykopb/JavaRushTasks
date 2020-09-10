@@ -17,24 +17,32 @@ public class Server {
         }
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
-          String result = "";
-            while (true) {
-                connection.send(new Message(MessageType.NAME_REQUEST));
+            String userName;
+            Message request = new Message(MessageType.NAME_REQUEST);
+            Message answer;
+            do {
+                connection.send(request);
+                answer = connection.receive();
+                userName = answer.getData();
 
-                if (connection.receive().getType() == MessageType.USER_NAME
-                                && connection.receive().getData() != null
-                                && connectionMap.get(connection.receive().getData()) !=null) {
+            } while (answer.getType() != MessageType.USER_NAME || userName.isEmpty() || connectionMap.containsKey(userName));
+            connectionMap.put(userName, connection);
+            connection.send(new Message(MessageType.NAME_ACCEPTED, " Вы в чате!"));
+            return userName;
+        }
 
-                    connectionMap.putIfAbsent(connection.receive().getData(), connection);
-                    connection.send(new Message(MessageType.NAME_ACCEPTED, "User accepted to chat" ));
-                    result = connection.receive().getData();
-                    break;
+
+        private void notifyUsers(Connection connection, String userName) throws IOException {
+            for (Map.Entry<String, Connection> map : connectionMap.entrySet()) {
+                if (!userName.equals(map.getKey())) {
+                    connection.send(new Message(MessageType.USER_ADDED, map.getKey()));
                 }
+
             }
 
-
-            return result;
         }
+
+
     }
 
     public static void main(String[] args) throws IOException {
