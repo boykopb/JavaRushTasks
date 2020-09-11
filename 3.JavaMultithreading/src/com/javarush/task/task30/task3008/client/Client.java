@@ -62,8 +62,10 @@ public class Client {
 
         @Override
         public void run() {
+            String serverAddress = getServerAddress();
+            int serverPort = getServerPort();
             try {
-                connection = new Connection(new Socket(getServerAddress(), getServerPort()));
+                connection = new Connection(new Socket(serverAddress,serverPort));
                 this.clientHandshake();
                 this.clientMainLoop();
             } catch (IOException | ClassNotFoundException e) {
@@ -131,6 +133,7 @@ public class Client {
         while (clientConnected) {
             String text = ConsoleHelper.readString();
             if (text.equals("exit")) {
+                ConsoleHelper.writeMessage("Program closed");
                 break;
             }
             if (shouldSendTextFromConsole()) {

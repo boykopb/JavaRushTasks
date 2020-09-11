@@ -48,7 +48,7 @@ public class Server {
                     Server.sendBroadcastMessage(new Message(MessageType.TEXT, userName + ": " + chatting.getData()));
                 }
                 if (chatting.getType() != MessageType.TEXT) {
-                    ConsoleHelper.writeMessage("Ошибка в методе serverMainLoop класса Server.Handler.\n" +
+                    ConsoleHelper.writeMessage("Ошибка в методе serverMainLoop класса Server.Handler." +
                             " Тип сообщения не \"TEXT\". Отправка не возможна.");
                 }
             }
@@ -67,7 +67,7 @@ public class Server {
                 sendBroadcastMessage(new Message(MessageType.USER_REMOVED, userName));
 
             } catch (IOException | ClassNotFoundException e) {
-                ConsoleHelper.writeMessage("Ошибка в методе run класса Server.Handler.\n" +
+                ConsoleHelper.writeMessage("Ошибка в методе run класса Server.Handler." +
                         " Ошибка при обмене данными с удаленным адресом.");
             }
 
@@ -102,8 +102,8 @@ public class Server {
             try {
                 map.getValue().send(message);
             } catch (IOException e) {
-                System.out.println("Ошибка в методе sendBroadcastMessage класса Server.\n" +
-                        " Не могу отправить сообщение пользователю : " + map.getKey());
+                System.out.println("Ошибка в методе sendBroadcastMessage класса Server. " +
+                        "Не могу отправить сообщение пользователю: " + map.getKey());
             }
         }
     }
