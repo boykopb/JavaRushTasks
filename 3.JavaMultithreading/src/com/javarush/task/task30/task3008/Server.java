@@ -1,5 +1,7 @@
 package com.javarush.task.task30.task3008;
 
+import com.javarush.task.task30.task3008.client.Client;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -27,7 +29,7 @@ public class Server {
             }
             while (answer.getType() != MessageType.USER_NAME || userName.isEmpty() || connectionMap.containsKey(userName));
             connectionMap.put(userName, connection);
-            connection.send(new Message(MessageType.NAME_ACCEPTED, " присоединился к чату!"));
+            connection.send(new Message(MessageType.NAME_ACCEPTED, " присоединился к чату"));
             return userName;
         }
 
@@ -46,7 +48,8 @@ public class Server {
                     Server.sendBroadcastMessage(new Message(MessageType.TEXT, userName + ": " + chatting.getData()));
                 }
                 if (chatting.getType() != MessageType.TEXT) {
-                    ConsoleHelper.writeMessage("Тип сообщения не \"TEXT\". Отправка не возможна.");
+                    ConsoleHelper.writeMessage("Ошибка в методе serverMainLoop класса Server.Handler.\n" +
+                            " Тип сообщения не \"TEXT\". Отправка не возможна.");
                 }
             }
         }
@@ -64,7 +67,8 @@ public class Server {
                 sendBroadcastMessage(new Message(MessageType.USER_REMOVED, userName));
 
             } catch (IOException | ClassNotFoundException e) {
-                ConsoleHelper.writeMessage("Произошла ошибка при обмене данными с удаленным адресом.");
+                ConsoleHelper.writeMessage("Ошибка в методе run класса Server.Handler.\n" +
+                        " Ошибка при обмене данными с удаленным адресом.");
             }
 
 
@@ -84,6 +88,11 @@ public class Server {
         } catch (Exception e) {
             e.getStackTrace();
         }
+
+
+        Client client = new Client();
+        client.run();
+
     }
 
 
@@ -92,7 +101,8 @@ public class Server {
             try {
                 map.getValue().send(message);
             } catch (IOException e) {
-                System.out.println("Не могу отправить сообщение : " + map.getKey());
+                System.out.println("Ошибка в методе sendBroadcastMessage класса Server.\n" +
+                        " Не могу отправить сообщение пользователю : " + map.getKey());
             }
         }
     }
