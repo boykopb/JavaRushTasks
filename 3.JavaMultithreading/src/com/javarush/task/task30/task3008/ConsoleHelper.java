@@ -13,7 +13,6 @@ public class ConsoleHelper {
     }
 
     public static String readString() {
-
         String readStr = "";
         try {
             readStr = bufferedReader.readLine();
@@ -29,7 +28,7 @@ public class ConsoleHelper {
         try {
             readInt = Integer.parseInt(readString());
         } catch (NumberFormatException e) {
-            System.out.println("Ошибка в методе readInt класса ConsoleHelper. Попробуйте еще раз.");
+            System.out.println("Ошибка в методе readInt класса ConsoleHelper. Вводите только цифры.");
             readInt = Integer.parseInt(readString());
         }
         return readInt;
