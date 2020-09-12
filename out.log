@@ -28430,3 +28430,26 @@
 2020-09-12 09:31:23 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
 2020-09-12 09:31:25 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
 2020-09-12 09:31:25 INFO  ApacheHttpClient.getFilteredTasks(333) - responseCode = 200
+2020-09-12 09:32:21 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-12 09:33:21 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-12 09:33:47 INFO  PluginTasksProjectComponent.projectClosing(197) - ---------- Project closed ----------
+
+2020-09-12 09:33:47 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-12 09:33:47 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-12 09:33:47 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-12 09:33:47 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-12 09:33:47 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-12 09:33:47 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-12 09:40:37 INFO  PluginTasksProjectComponent.projectOpened(86) - ---------- Project opened ----------
+2020-09-12 09:40:37 INFO  PluginTasksProjectComponent.projectOpened(87) - ---------- Version 3.42 ----------
+
+2020-09-12 09:40:37 INFO  ApacheHttpClient.createAsyncHttpClient(143) - 1 proxies selected. Type: DIRECT
+2020-09-12 09:40:38 INFO  ApacheHttpClient.<init>(94) - ApacheHttpClient was successfully instantiated.
+2020-09-12 09:40:38 INFO  ApacheHttpClient.testConnection(202) - responseCode = 200
+2020-09-12 09:40:38 INFO  ApacheHttpClient.testConnection(217) - result = true
+2020-09-12 09:40:38 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(594) - Waiting for server response.
+2020-09-12 09:40:38 INFO  ApacheHttpClient.refreshUserInfo(302) - responseCode = 200
+2020-09-12 09:40:38 INFO  ApacheHttpClient.refreshUserInfo(308) - User information received.
+2020-09-12 09:40:38 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2020-09-12 09:40:38 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-09-12 09:41:38 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
