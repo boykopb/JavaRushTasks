@@ -1,39 +1,58 @@
 package com.javarush.task.task31.task3101;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.EnumSet;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /* 
 Проход по дереву файлов
 */
 
-/*
-
-1) Для обхода дерева файлов и каталогов использовал Files.walkFileTree() с анонимным классом SimpleFileVisitor.
-Очень удобная штука, есть инфа в инете.
-2) В методе visitFile() этого же класса проверяйте чтобы файл не был директорией и чтобы его length была <= 50.
-3) Сортировку делал так: все файлы прошедшые требования выше добавлял в TreeSet.
-В сет вставил компаратор по getName (Comparator.comparing(File::getName))
-4) Не мог сразу понять метод FileUtils.renameFile(). Нужно создать два файла: первый с именем заданным в параметрах
-программы, второй с таким именем: firstFile.getParent() + "/allFilesContent.txt". Потом вызываем на них renameFile()
- метод. Кажется, он просто удалит первый файл и создаст вместо него второй. Кстати, обернул метод renameFile()
- в проверку FileUtils.isExist() - валидатор принял.
-5) Записывал содержимое файлов с помощью FileWriter/Reader завернутих в BufferedWriter/Reader
-(не забудьте добавить true в конструктор FileWriter). Использовал конструкцию try-with-resources.
- */
 public class Solution {
-    public static void main(String[] args) {
-
-        File path = new File(args[0]);
+    public static void main(String[] args) throws IOException {
+        Path path = Paths.get(args[0]);
         File resultFileAbsolutePath = new File(args[1]);
+        File allFilesContent = new File(resultFileAbsolutePath.getParent() + "/allFilesContent.txt");
+        FileUtils.deleteFile(allFilesContent);
+        FileUtils.renameFile(resultFileAbsolutePath, allFilesContent);
 
+        ArrayList<Path> listOfPaths = new ArrayList<>();
+        try {
+            SimpleFileVisitor visitor = new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) throws IOException {
+                    if (path.toFile().length() <= 50 && !path.toFile().isDirectory()) {
+                        listOfPaths.add(path);
+                    }
+                    return FileVisitResult.CONTINUE;
+                }
+            };
+            Files.walkFileTree(path, visitor);
+            listOfPaths.sort((o1, o2) -> o1.toFile().getName().compareToIgnoreCase(o2.toFile().getName()));
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(allFilesContent));
+        for (Path file : listOfPaths) {
+            //System.out.println(file.toFile().getName() + " записан || путь к файлу:" + file.toString());
+            Solution sol = new Solution();
+            sol.write(writer, file.toFile());
+        }
+        writer.close();
 
     }
+
+    private void write(BufferedWriter writer, File file) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        while (reader.ready()) {
+            writer.write(reader.readLine());
+            writer.newLine();
+        }
+        reader.close();
+    }
 }
+
+

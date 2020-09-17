@@ -10,10 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFileVisitor extends SimpleFileVisitor<Path> {
-    String partOfName;
-    String partOfContent;
-    int minSize;
-    int maxSize;
+    private String partOfName = "";
+    private String partOfContent = "";
+    private int minSize = 0;
+    private int maxSize = Integer.MAX_VALUE;
+    private List<Path> foundFiles = new ArrayList<>();
 
     public void setPartOfName(String partOfName) {
         this.partOfName = partOfName;
@@ -31,10 +32,22 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
         this.maxSize = maxSize;
     }
 
+    public List<Path> getFoundFiles() {
+        return foundFiles;
+    }
+
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         byte[] content = Files.readAllBytes(file); // размер файла: content.length
+        String contentStr = new String(content);
 
-        return super.visitFile(file, attrs);
+        if (file.getFileName().toString().contains(partOfName)
+                && contentStr.contains(partOfContent)
+                && content.length  < maxSize
+                && content.length  > minSize
+        ) {
+            foundFiles.add(file);
+        }
+        return FileVisitResult.CONTINUE;
     }
 }
