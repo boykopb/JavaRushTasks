@@ -17,12 +17,14 @@ public class Solution {
         list.remove("3");
         System.out.println("The expected parent is null. The actual parent is " + ((CustomTree) list).getParent("8"));
 
+
         list.add("16");
         System.out.println("The expected parent is 9. The actual parent is " + ((CustomTree) list).getParent("16"));
 
         list.remove("4");
         list.remove("5");
         list.remove("6");
+
         System.out.println("Expected: true. Actual: " + list.add("20"));
         System.out.println("The expected parent is 1. The actual parent is " + ((CustomTree) list).getParent("20"));
     }

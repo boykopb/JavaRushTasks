@@ -1,10 +1,7 @@
 package com.javarush.task.task20.task2028;
 
 import java.io.Serializable;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /* 
 Построй дерево(1)
@@ -12,12 +9,15 @@ import java.util.List;
 public class CustomTree extends AbstractList<String> implements Cloneable, Serializable {
     Entry<String> root;
     ArrayList<Entry<String>> tree;
+    Stack<Entry<String>> removeStack = new Stack<>();
 
     public CustomTree() {
         this.root = new Entry<>("0");
         root.parent = null;
         this.tree = new ArrayList<>();
         tree.add(root);
+        root.availableToAddLeftChildren = true;
+        root.availableToAddRightChildren = true;
 
     }
 
@@ -109,32 +109,47 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
 
 
     public boolean remove(Object o) {
-        boolean isNodeRemoved = false;
-      /*  if (!(o instanceof String)) {
+        if (!(o instanceof String))
             throw new UnsupportedOperationException();
-        }*/
 
-
-        for (int i = 0; i < tree.size(); i++) {
-            Entry<String> currentNode = tree.get(i);
-            if (currentNode.elementName.equals(o)) {
-                if (currentNode.leftChild != null) {
-                    remove(currentNode.leftChild);
-                }
-                if (currentNode.rightChild != null) {
-                    remove(currentNode.rightChild);
-                }
-
-                if (currentNode.rightChild == null && currentNode.leftChild == null) {
-                    tree.remove(currentNode);
-                    isNodeRemoved = true;
-                    break;
-                }
+        Entry<String> nodeRemove = null;
+        String nodeRemoveName = (String) o;
+        for (Entry<String> entry : tree) {
+            if (entry.elementName.equals(nodeRemoveName)) {
+                nodeRemove = entry;
+                break;
             }
+        }
+
+        if (nodeRemove == null)
+            return false;
+
+        if (nodeRemove.leftChild != null) {
+         //   System.out.println("<======= LEFT BRANCH DEEPER " + o);
+            remove(nodeRemove.leftChild.elementName);
+        }
+        if (nodeRemove.rightChild != null) {
+         //   System.out.println("=======>  RIGHT BRANCH DEEPER " + o);
+            remove(nodeRemove.rightChild.elementName);
 
         }
 
-        return isNodeRemoved;
+        if (nodeRemove.parent.leftChild == nodeRemove) {
+        //    System.out.println("LEFT CHILD IS NULL FOR " + nodeRemove.parent.elementName);
+            nodeRemove.parent.availableToAddLeftChildren = true;
+            nodeRemove.parent.leftChild = null;
+        } else {
+            nodeRemove.parent.rightChild = null;
+            nodeRemove.parent.availableToAddRightChildren = true;
+        //    System.out.println("RIGHT CHILD IS NULL FOR " + nodeRemove.parent.elementName);
+
+        }
+       // System.out.println("REMOVED " + nodeRemove.elementName);
+        tree.remove(nodeRemove);
+
+        return true;
+
+
     }
 
 

@@ -54,7 +54,7 @@ public class EnemyFleet {
     private double getSpeed() {
         return Math.min(2.0, 3.0 / ships.size());
     }
-
+    
     public void move() {
         boolean hasMoved = false;
         if (ships.size() == 0) return;
