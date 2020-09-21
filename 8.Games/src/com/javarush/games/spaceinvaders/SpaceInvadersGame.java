@@ -12,6 +12,7 @@ public class SpaceInvadersGame extends Game {
     public static final int HEIGHT = 64;
     private List<Star> stars;
     private EnemyFleet enemyFleet;
+    public static final int COMPLEXITY = 5;
 
     private void drawField() {
 
@@ -27,10 +28,12 @@ public class SpaceInvadersGame extends Game {
         }
 
     }
+
     private void drawScene() {
         drawField();
         enemyFleet.draw(this);
     }
+
     private void createGame() {
         createStars();
         enemyFleet = new EnemyFleet();
@@ -38,17 +41,17 @@ public class SpaceInvadersGame extends Game {
         setTurnTimer(40);
     }
 
-          
+
     @Override
     public void initialize() {
         setScreenSize(WIDTH, HEIGHT);
         createGame();
     }
 
-    private void createStars(){
+    private void createStars() {
         stars = new ArrayList<Star>();
         for (int i = 0; i < 8; i++) {
-            stars.add(new Star(i*Math.random()*5, i*Math.random()*4));
+            stars.add(new Star(i * Math.random() * 5, i * Math.random() * 4));
         }
 
     }
