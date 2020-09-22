@@ -21,14 +21,6 @@ public class View extends JFrame implements ActionListener {
         this.controller = controller;
     }
 
-    /*
-    4.3. Реализуй метод init() представления. Он должен:
-    4.3.1. Вызывать инициализацию графического интерфейса initGui().
-    4.3.2. Добавлять слушателя событий нашего окна. В качестве подписчика создай и используй объект класса FrameListener.
-    В качестве метода для добавления подписчика используй подходящий метод из класса Window от которого наследуется и наш класс через классы JFrame и Frame.
-    4.3.3. Показывать наше окно. Используй метод setVisible с правильным параметром.
-    На этом этапе приложение при запуске должно показывать окно, которое можно растягивать, разворачивать, закрыть и т.д.
-     */
     public void init() {
         initGui();
         addWindowListener(new FrameListener(this));
@@ -56,6 +48,10 @@ public class View extends JFrame implements ActionListener {
         initMenuBar();
         initEditor();
         pack();
+    }
+
+    public void selectedTabChanged() {
+
     }
 
 
