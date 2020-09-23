@@ -54,7 +54,7 @@ public class EnemyFleet {
     private double getSpeed() {
         return Math.min(2.0, 3.0 / ships.size());
     }
-    
+
     public void move() {
         boolean hasMoved = false;
         if (ships.size() == 0) return;
@@ -67,7 +67,7 @@ public class EnemyFleet {
             hasMoved = true;
 
         }
-        if (hasMoved){
+        if (hasMoved) {
             for (EnemyShip ship : ships) {
                 ship.move(Direction.DOWN, getSpeed());
             }
@@ -76,6 +76,16 @@ public class EnemyFleet {
                 ship.move(direction, getSpeed());
             }
         }
+    }
+
+    public Bullet fire(Game game) {
+        if (ships.isEmpty()) {
+            return null;
+        }
+        if (game.getRandomNumber(100 / SpaceInvadersGame.COMPLEXITY) > 0) {
+            return null;
+        }
+        return ships.get(game.getRandomNumber(ships.size())).fire();
     }
 
 }
