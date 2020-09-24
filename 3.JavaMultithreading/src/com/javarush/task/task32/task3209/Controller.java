@@ -4,6 +4,7 @@ import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.File;
 import java.io.StringReader;
+import java.io.StringWriter;
 
 public class Controller {
 
@@ -48,8 +49,18 @@ public class Controller {
         } catch (Exception e) {
             ExceptionHandler.log(e);
         }
+    }
 
+    public String getPlainText() {
+        try {
+            StringWriter stringWriter = new StringWriter();
 
+           new HTMLEditorKit().write(stringWriter, document,0, document.getLength());
+           return stringWriter.toString();
+        } catch (Exception e) {
+            ExceptionHandler.log(e);
+        }
+        return null;
     }
 
     public static void main(String[] args) {
