@@ -18,7 +18,7 @@ public class Controller {
 
 
     public void init() {
-
+        createNewDocument();
     }
 
     public void exit() {
@@ -63,7 +63,12 @@ public class Controller {
         return null;
     }
 
-    public void createNewDocument(){
+    public void createNewDocument() {
+        view.selectHtmlTab();
+        resetDocument();
+        view.setTitle("HTML редактор");
+        view.resetUndo();
+        currentFile = null;
 
     }
     public void openDocument(){
