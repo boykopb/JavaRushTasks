@@ -53,10 +53,28 @@ public class View extends JFrame implements ActionListener {
         controller.exit();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
+@Override
+public void actionPerformed(ActionEvent e) {
+    switch (e.getActionCommand()) {
+        case ("Новый"):
+            controller.createNewDocument();
+            break;
+        case ("Открыть"):
+            controller.openDocument();
+            break;
+        case ("Сохранить"):
+            controller.saveDocument();
+            break;
+        case ("Сохранить как..."):
+            controller.saveDocumentAs();
+            break;
+        case ("Выход"):
+            controller.exit();
+            break;
+        default:
+            this.showAbout();
     }
+}
 
 
     public void initMenuBar() {
@@ -91,7 +109,14 @@ public class View extends JFrame implements ActionListener {
         pack();
     }
 
+
     public void selectedTabChanged() {
+        if (tabbedPane.getSelectedIndex() == 0) {
+            controller.setPlainText(plainTextPane.getText());
+        } else if (tabbedPane.getSelectedIndex() != 0) {
+            plainTextPane.setText(controller.getPlainText());
+        }
+        this.resetUndo();
 
     }
 
@@ -139,6 +164,9 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void showAbout() {
-JOptionPane.showMessageDialog(tabbedPane.getSelectedComponent(), "ver 0.5", "About",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(tabbedPane.getSelectedComponent(),
+                "Учебная версия, made by boykopb",
+                "About",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 }

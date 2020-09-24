@@ -63,6 +63,20 @@ public class Controller {
         return null;
     }
 
+    public void createNewDocument(){
+
+    }
+    public void openDocument(){
+
+    }
+
+    public void saveDocument(){
+
+    }
+    public void saveDocumentAs(){
+
+    }
+
     public static void main(String[] args) {
         View view = new View();
         Controller controller = new Controller(view);
@@ -71,6 +85,7 @@ public class Controller {
         controller.init();
 
     }
+
 
 
 
