@@ -35082,3 +35082,60 @@
 2020-09-25 18:45:19 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
 2020-09-25 18:46:20 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
 2020-09-25 18:46:20 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 18:47:10 INFO  ProjectStartupHandler.projectClosing(154) - ---------- Project closed ----------
+
+2020-09-25 18:47:10 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-25 18:47:11 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-25 18:47:11 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-09-25 18:47:11 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2020-09-25 19:36:59 INFO  ProjectStartupHandler.runActivity(73) - ---------- Project opened ----------
+2020-09-25 19:36:59 INFO  ProjectStartupHandler.runActivity(74) - ---------- Version 3.43 ----------
+
+2020-09-25 19:36:59 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(594) - Waiting for server response.
+2020-09-25 19:36:59 INFO  ApacheHttpClient.refreshUserInfo(302) - responseCode = 200
+2020-09-25 19:36:59 INFO  ApacheHttpClient.refreshUserInfo(308) - User information received.
+2020-09-25 19:36:59 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2020-09-25 19:36:59 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-09-25 19:37:17 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-09-25 19:37:17 INFO  ApacheHttpClient.getFilteredTasks(333) - responseCode = 200
+2020-09-25 19:37:43 INFO  ApacheHttpClient.getTaskTemplateInfo(350) - responseCode = 200
+2020-09-25 19:37:43 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(73) - File created :C:/Users/Paf/IdeaProjects/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task29/task2911
+2020-09-25 19:37:43 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-09-25 19:37:43 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-09-25 19:37:43 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-09-25 19:37:43 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-09-25 19:37:43 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-09-25 19:37:43 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-09-25 19:37:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:39:00 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:39:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:40:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:41:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:42:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:43:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:44:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:45:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:46:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:47:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:48:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:49:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:49:59 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-09-25 19:50:06 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-09-25 19:50:07 INFO  ApacheHttpClient.getFilteredTasks(333) - responseCode = 200
+2020-09-25 19:50:14 INFO  ApacheHttpClient.getTaskTemplateInfo(350) - responseCode = 200
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(73) - File created :C:/Users/Paf/IdeaProjects/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task29/task2910
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-09-25 19:50:14 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
