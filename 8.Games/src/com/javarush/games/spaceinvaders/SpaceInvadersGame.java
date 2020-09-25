@@ -75,9 +75,8 @@ public class SpaceInvadersGame extends Game {
     }
 
     private void removeDeadBullets() {
-        List<Bullet> enemyBulletsCopy = enemyBullets;
-        for (Bullet bullet : enemyBulletsCopy) {
-            if (bullet.y >= HEIGHT - 1) {
+        for (Bullet bullet : new ArrayList<>(enemyBullets)) {
+            if (!bullet.isAlive || bullet.y >= HEIGHT - 1) {
                 enemyBullets.remove(bullet);
             }
         }

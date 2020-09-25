@@ -97,7 +97,6 @@ public class Controller {
         if (currentFile != null) {
             try (FileWriter fileWriter = new FileWriter(currentFile)) {
                 new HTMLEditorKit().write(fileWriter, document, 0, document.getLength());
-
             } catch (IOException | BadLocationException e) {
                 ExceptionHandler.log(e);
             }
