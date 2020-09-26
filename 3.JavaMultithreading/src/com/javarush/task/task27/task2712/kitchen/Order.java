@@ -4,7 +4,6 @@ import com.javarush.task.task27.task2712.ConsoleHelper;
 import com.javarush.task.task27.task2712.Tablet;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 public class Order {
@@ -15,16 +14,20 @@ public class Order {
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
         this.dishes = ConsoleHelper.getAllDishesForOrder();
+        ConsoleHelper.writeMessage(toString());
     }
 
 
     @Override
     public String toString() {
-        if (dishes.size() >0) {
-            return String.format("Your order: %s of %s", Arrays.toString(dishes.toArray()), tablet);
-        } else {
-            return "";
-        }
+        String result = "";
+        if (dishes.size() == 0) return result;
+        result += "Your order: [" + dishes.get(0);
 
+        for (int i = 1; i < dishes.size(); i++) {
+            result += ", " + dishes.get(i).name();
+        }
+        result += "] of " + tablet;
+        return result;
     }
 }
