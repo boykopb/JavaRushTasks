@@ -12,22 +12,19 @@ public class Solution {
 
     public static String getAllNumbersBetween(int a, int b) {
         StringBuilder result = new StringBuilder();
-        if (a > b) {
-            for (int i = b; i < a; i++) {
+        if (a < b) {
+            for (int i = a; i <= b; i++) {
                 result.append(i).append(" ");
             }
 
-        }
-        if (a == b) {
-            result.append(b);
-        }
-        if (a < b){
-            for (int i = b; i > a; i--) {
+        } else {
+            for (int i = a; i >= b; i--) {
                 result.append(i).append(" ");
             }
         }
 
         return result.toString().trim();
+
     }
 
     public static void main(String[] args) {
