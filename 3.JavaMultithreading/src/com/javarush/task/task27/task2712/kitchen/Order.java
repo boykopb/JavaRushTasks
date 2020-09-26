@@ -20,14 +20,26 @@ public class Order {
 
     @Override
     public String toString() {
-        String result = "";
-        if (dishes.size() == 0) return result;
-        result += "Your order: [" + dishes.get(0);
+        StringBuilder result = new StringBuilder();
+        if (dishes.size() == 0) return result.toString();
+        result.append("Your order: [").append(dishes.get(0));
 
         for (int i = 1; i < dishes.size(); i++) {
-            result += ", " + dishes.get(i).name();
+            result.append(", ").append(dishes.get(i).name());
         }
-        result += "] of " + tablet;
-        return result;
+        result.append("] of ").append(tablet).append(", cooking time ").append(getTotalCookingTime()).append("min");
+        return result.toString();
+    }
+
+    public int getTotalCookingTime() {
+        int totalCookingTime = 0;
+        for (Dish dish : dishes) {
+            totalCookingTime += dish.getDuration();
+        }
+        return totalCookingTime;
+    }
+
+    public boolean isEmpty() {
+        return dishes.isEmpty();
     }
 }
