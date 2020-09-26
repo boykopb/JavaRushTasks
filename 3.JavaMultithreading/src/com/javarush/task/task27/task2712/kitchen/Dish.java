@@ -9,7 +9,6 @@ public enum Dish {
     Juice,
     Water;
 
-
     public static String allDishesToString() {
         return Arrays.toString(Dish.values());
     }
