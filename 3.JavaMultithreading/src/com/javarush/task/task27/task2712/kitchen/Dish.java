@@ -11,12 +11,12 @@ public enum Dish {
 
     private int duration;
 
-    Dish(int duration) {
-        this.duration = duration;
-    }
-
     public int getDuration() {
         return duration;
+    }
+
+    Dish(int duration) {
+        this.duration = duration;
     }
 
     public static String allDishesToString() {

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConsoleHelper {
-
     private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message) {
@@ -21,8 +20,8 @@ public class ConsoleHelper {
     }
 
     public static List<Dish> getAllDishesForOrder() throws IOException {
-        List<Dish> orderList = new ArrayList<>();
-        ConsoleHelper.writeMessage("Выберите из списка:" + Dish.allDishesToString() + "\n или введите 'exit' для завершения.");
+        List<Dish> dishes = new ArrayList<>();
+        ConsoleHelper.writeMessage("Please choose a dish from the list:" + Dish.allDishesToString() + "\n or type 'exit' to complete the order");
         while (true) {
             String dishName = ConsoleHelper.readString().trim();
             if ("exit".equals(dishName)) {
@@ -31,16 +30,13 @@ public class ConsoleHelper {
 
             try {
                 Dish dish = Dish.valueOf(dishName);
-                orderList.add(dish);
-                writeMessage(dishName + " добавлен к заказу.");
+                dishes.add(dish);
+                writeMessage(dishName + " has been successfully added to your order");
             } catch (Exception e) {
-                writeMessage(dishName + " не найдено в списке. Повторите попытку.");
+                writeMessage(dishName + " hasn't been detected");
             }
         }
 
-        return orderList;
+        return dishes;
     }
-
-
-
 }

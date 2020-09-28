@@ -21,11 +21,10 @@ public class Tablet extends Observable {
         Order order = null;
         try {
             order = new Order(this);
-
             if (order.isEmpty()) {
                 return null;
             }
-            AdvertisementManager advertisementManager = new AdvertisementManager(order.getTotalCookingTime()*60);
+            AdvertisementManager advertisementManager = new AdvertisementManager(order.getTotalCookingTime() * 60);
             advertisementManager.processVideos();
             setChanged();
             notifyObservers(order);

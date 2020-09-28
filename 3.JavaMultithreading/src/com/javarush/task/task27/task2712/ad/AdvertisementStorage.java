@@ -4,7 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AdvertisementStorage {
-    private static volatile AdvertisementStorage instance;
+    private static class InstanceHolder {
+        private static final AdvertisementStorage ourInstance = new AdvertisementStorage();
+    }
+
+    public static AdvertisementStorage getInstance() {
+        return InstanceHolder.ourInstance;
+    }
+
     private final List<Advertisement> videos = new LinkedList<>();
 
     private AdvertisementStorage() {
@@ -14,21 +21,9 @@ public class AdvertisementStorage {
         videos.add(new Advertisement(someContent, "Third Video", 400, 2, 10 * 60)); //10 min
     }
 
-    public static AdvertisementStorage getInstance() {
-        if (instance == null) {
-            synchronized (AdvertisementStorage.class) {
-                if (instance == null) {
-                    instance = new AdvertisementStorage();
-                }
-            }
-        }
-        return instance;
-    }
 
 
-
-
-    public List<Advertisement> list () {
+    public List<Advertisement> list() {
         return videos;
     }
 
