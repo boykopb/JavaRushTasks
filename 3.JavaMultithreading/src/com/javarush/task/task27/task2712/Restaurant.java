@@ -5,7 +5,7 @@ import com.javarush.task.task27.task2712.kitchen.Waiter;
 
 public class Restaurant {
     public static void main(String[] args) {
-        Tablet tablet = new Tablet(5);
+        Tablet tablet = new Tablet(1);
         Cook cook = new Cook("John Smith");
         Waiter waiter = new Waiter();
         tablet.addObserver(cook);

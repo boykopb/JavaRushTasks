@@ -116,11 +116,6 @@ public class SpaceInvadersGame extends Game {
         }
     }
 
-    /*
-
-    6. Метод onKeyPress(Key) должен устанавливать кораблю игрока направление Direction.LEFT, если параметр метода — клавиша LEFT.
-    7. Метод onKeyPress(Key) должен устанавливать кораблю игрока направление Direction.RIGHT, если параметр метода — клавиша RIGHT.
-     */
     @Override
     public void onKeyPress(Key key) {
         if (key == Key.SPACE && isGameStopped) createGame();

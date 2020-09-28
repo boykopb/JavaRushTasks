@@ -1,11 +1,10 @@
 package com.javarush.task.task27.task2712;
 
+import com.javarush.task.task27.task2712.ad.Advertisement;
+import com.javarush.task.task27.task2712.ad.StatisticAdvertisementManager;
 import com.javarush.task.task27.task2712.statistic.StatisticManager;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 public class DirectorTablet {
 
@@ -40,12 +39,51 @@ public class DirectorTablet {
             System.out.println();
         }
     }
+/*
+4. Реализуй логику методов printActiveVideoSet и printArchivedVideoSet в классе DirectorTablet.
+Используй методы/метод, созданные в предыдущем пункте.
+Сортировать по имени видео-ролика в алфавитном порядке
+Сначала английские, потом русские.
 
+Пример вывода для printActiveVideoSet:
+First Video - 100
+Second video - 10
+Third Video - 2
+четвертое видео - 4
+
+Через 50 показов пример вывода для printArchivedVideoSet:
+Second video
+Third Video
+четвертое видео
+
+
+ */
     public void printActiveVideoSet() {
+        List<Advertisement> result = StatisticAdvertisementManager.getInstance().getActiveList();
+        Collections.sort(result, new Comparator<Advertisement>() {
+            @Override
+            public int compare(Advertisement o1, Advertisement o2) {
+                return o1.getName().compareToIgnoreCase(o2.getName());
+            }
+        });
+
+        for (Advertisement advertisement : result) {
+            System.out.println(advertisement.getName() + " - " + advertisement.getHits());
+        }
 
     }
 
     public void printArchivedVideoSet() {
+        List<Advertisement> result = StatisticAdvertisementManager.getInstance().getArchiveList();
+        Collections.sort(result, new Comparator<Advertisement>() {
+            @Override
+            public int compare(Advertisement o1, Advertisement o2) {
+                return o1.getName().compareToIgnoreCase(o2.getName());
+            }
+        });
 
+        for (Advertisement advertisement : result) {
+            System.out.println(advertisement.getName() + " - " + advertisement.getHits());
+        }
     }
 }

@@ -44,4 +44,8 @@ public class Advertisement {
     public boolean isActive() {
         return hits > 0;
     }
+
+    public int getHits() {
+        return hits;
+    }
 }
