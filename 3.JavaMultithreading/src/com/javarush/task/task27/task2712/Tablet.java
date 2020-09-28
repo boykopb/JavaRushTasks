@@ -30,21 +30,15 @@ public class Tablet extends Observable {
             notifyObservers(order);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
-        } catch (NoVideoAvailableException e) {
+        } catch (NoVideoAvailableException nve) {
             logger.log(Level.INFO, "No video is available for the order " + order);
-
         }
         return order;
     }
 
-    @Override
     public String toString() {
         return "Tablet{" +
                 "number=" + number +
                 '}';
-
     }
-
-
 }
-

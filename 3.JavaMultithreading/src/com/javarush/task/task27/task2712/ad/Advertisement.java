@@ -1,7 +1,5 @@
 package com.javarush.task.task27.task2712.ad;
 
-import java.util.Comparator;
-
 public class Advertisement {
 
     private Object content;
