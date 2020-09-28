@@ -17,6 +17,8 @@ public class SpaceInvadersGame extends Game {
     public static final int COMPLEXITY = 5;
     private List<Bullet> enemyBullets;
     private PlayerShip playerShip;
+    private boolean isGameStopped;
+    private int animationsCount;
 
     private void drawField() {
         for (int y = 0; y < HEIGHT; y++) {
@@ -42,8 +44,10 @@ public class SpaceInvadersGame extends Game {
     private void createGame() {
         createStars();
         enemyFleet = new EnemyFleet();
-        enemyBullets = new  ArrayList<Bullet>();
+        enemyBullets = new ArrayList<Bullet>();
         playerShip = new PlayerShip();
+        isGameStopped = false;
+        animationsCount = 0;
         drawScene();
         setTurnTimer(40);
     }
@@ -86,10 +90,42 @@ public class SpaceInvadersGame extends Game {
             }
         }
     }
+
     private void check() {
         playerShip.verifyHit(enemyBullets);
         removeDeadBullets();
+        if (!playerShip.isAlive) stopGameWithDelay();
     }
 
+    private void stopGame(boolean isWin) {
+        isGameStopped = true;
+        stopTurnTimer();
+        if (isWin) {
+            showMessageDialog(Color.WHITE, "WIN!", Color.GREEN, 50);
+        } else {
+            showMessageDialog(Color.WHITE, "LOOSE!", Color.RED, 50);
 
+        }
+    }
+
+    private void stopGameWithDelay() {
+        animationsCount++;
+        if (animationsCount >= 10) {
+            stopGame(playerShip.isAlive);
+
+        }
+    }
+
+    /*
+
+    6. Метод onKeyPress(Key) должен устанавливать кораблю игрока направление Direction.LEFT, если параметр метода — клавиша LEFT.
+    7. Метод onKeyPress(Key) должен устанавливать кораблю игрока направление Direction.RIGHT, если параметр метода — клавиша RIGHT.
+     */
+    @Override
+    public void onKeyPress(Key key) {
+        if (key == Key.SPACE && isGameStopped) createGame();
+        if (key == Key.LEFT) playerShip.setDirection(Direction.LEFT);
+        if (key == Key.RIGHT) playerShip.setDirection(Direction.RIGHT);
+
+    }
 }
