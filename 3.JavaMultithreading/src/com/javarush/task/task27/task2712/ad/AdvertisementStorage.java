@@ -21,8 +21,6 @@ public class AdvertisementStorage {
         videos.add(new Advertisement(someContent, "Third Video", 400, 2, 10 * 60)); //10 min
     }
 
-
-
     public List<Advertisement> list() {
         return videos;
     }
