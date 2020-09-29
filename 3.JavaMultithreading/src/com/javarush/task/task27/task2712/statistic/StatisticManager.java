@@ -17,6 +17,11 @@ public class StatisticManager {
     }
 
     private StatisticStorage statisticStorage = new StatisticStorage();
+
+    public Set<Cook> getCooks() {
+        return cooks;
+    }
+
     private Set<Cook> cooks = new HashSet<>();
 
     private StatisticManager() {
@@ -98,7 +103,4 @@ public class StatisticManager {
         return res;
     }
 
-    public Set<Cook> getCooks() {
-        return cooks;
-    }
 }
