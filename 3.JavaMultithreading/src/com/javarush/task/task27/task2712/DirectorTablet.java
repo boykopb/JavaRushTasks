@@ -15,8 +15,8 @@ public class DirectorTablet {
         Collections.sort(list);
 
         for (String key : list) {
-            double amount = 1.0 * profitMap.get(key) / 100;
-            System.out.println(key + " - " + String.format(Locale.ENGLISH, "%.2f", amount));
+            long aLong = profitMap.get(key);
+            System.out.println(key + " - " + (aLong / 100) + "." + (aLong % 100));
         }
     }
 
@@ -39,25 +39,7 @@ public class DirectorTablet {
             System.out.println();
         }
     }
-/*
-4. Реализуй логику методов printActiveVideoSet и printArchivedVideoSet в классе DirectorTablet.
-Используй методы/метод, созданные в предыдущем пункте.
-Сортировать по имени видео-ролика в алфавитном порядке
-Сначала английские, потом русские.
 
-Пример вывода для printActiveVideoSet:
-First Video - 100
-Second video - 10
-Third Video - 2
-четвертое видео - 4
-
-Через 50 показов пример вывода для printArchivedVideoSet:
-Second video
-Third Video
-четвертое видео
-
-
- */
     public void printActiveVideoSet() {
         List<Advertisement> result = StatisticAdvertisementManager.getInstance().getActiveList();
         Collections.sort(result, new Comparator<Advertisement>() {
@@ -83,7 +65,7 @@ Third Video
         });
 
         for (Advertisement advertisement : result) {
-            System.out.println(advertisement.getName() + " - " + advertisement.getHits());
+            System.out.println(advertisement.getName());
         }
     }
 }

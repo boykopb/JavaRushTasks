@@ -4,16 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StatisticAdvertisementManager {
-
-    private static class InstanceHolder {
-        private static final StatisticAdvertisementManager ourInstance = new StatisticAdvertisementManager();
-    }
+    private static StatisticAdvertisementManager ourInstance = new StatisticAdvertisementManager();
+    private AdvertisementStorage advertisementStorage = AdvertisementStorage.getInstance();
 
     public static StatisticAdvertisementManager getInstance() {
-        return StatisticAdvertisementManager.InstanceHolder.ourInstance;
+        return ourInstance;
     }
 
-    private AdvertisementStorage advertisementStorage = AdvertisementStorage.getInstance();
+    private StatisticAdvertisementManager() {
+    }
 
     public List<Advertisement> getActiveList(){
         List<Advertisement> activeList = new ArrayList<>();
@@ -30,5 +29,4 @@ public class StatisticAdvertisementManager {
         }
         return archiveList;
     }
-
 }

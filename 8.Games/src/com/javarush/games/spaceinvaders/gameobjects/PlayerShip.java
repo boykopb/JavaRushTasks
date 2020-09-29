@@ -43,4 +43,26 @@ public class PlayerShip extends Ship {
             this.direction = newDirection;
         }
     }
+
+
+    public void move() {
+        if (!isAlive) return;
+        if (direction == Direction.LEFT) this.x--;
+        if (direction == Direction.RIGHT) this.x++;
+        if (this.x < 0) this.x = 0;
+        if (this.x + this.width > SpaceInvadersGame.WIDTH) this.x = SpaceInvadersGame.WIDTH - this.width;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+
+    @Override
+    public Bullet fire() {
+        if (!this.isAlive) {
+            return null;
+        }
+        return new Bullet(x + 2, y - ShapeMatrix.BULLET.length, Direction.UP);
+    }
 }

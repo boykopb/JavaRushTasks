@@ -8,6 +8,17 @@ import java.util.List;
 
 public class Order {
     private final Tablet tablet;
+    protected List<Dish> dishes;
+
+    public Order(Tablet tablet) throws IOException {
+        this.tablet = tablet;
+        initDishes();
+        ConsoleHelper.writeMessage(toString());
+    }
+
+    protected void  initDishes() throws IOException {
+        this.dishes = ConsoleHelper.getAllDishesForOrder();
+    }
 
     public List<Dish> getDishes() {
         return dishes;
@@ -16,14 +27,6 @@ public class Order {
     public Tablet getTablet() {
 
         return tablet;
-    }
-
-    protected List<Dish> dishes;
-
-    public Order(Tablet tablet) throws IOException {
-        this.tablet = tablet;
-        this.dishes = ConsoleHelper.getAllDishesForOrder();
-        ConsoleHelper.writeMessage(toString());
     }
 
     @Override
