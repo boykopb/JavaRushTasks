@@ -1,5 +1,6 @@
 package com.javarush.task.task30.task3009;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,21 @@ public class Solution {
     }
 
     private static Set<Integer> getRadix(String number) {
+            Set <Integer> answer = new HashSet<>();
+            try {
+                for (int i = 2; i <= 36; i++) {
+                    String temp = Integer.toString(Integer.parseInt(number), i);
+                    if (isPalindrom(temp)) {
+                        answer.add(i);
+                    }
+                }
+            } catch (NumberFormatException e) {
+            }
+        return answer;
+    }
 
-        return null;
+    private static boolean isPalindrom(String input){
+        String reverse = new StringBuilder(input).reverse().toString();;
+        return input.equals(reverse);
     }
 }

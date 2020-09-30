@@ -50,4 +50,8 @@ public class Ship extends GameObject {
         super.draw(game);
         nextFrame();
     }
+
+    public boolean isVisible() {
+        return this.isAlive || frameIndex < frames.size();
+    }
 }
