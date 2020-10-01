@@ -38,11 +38,13 @@ public class Ship extends GameObject {
         frameIndex = 0;
     }
 
+
     public void nextFrame() {
-        if (frameIndex < frames.size() - 1) {
-            frameIndex++;
-            this.matrix = frames.get(frameIndex);
+        frameIndex++;
+        if (frameIndex >= frames.size()) {
+            return;
         }
+        matrix = frames.get(frameIndex);
     }
 
     @Override
