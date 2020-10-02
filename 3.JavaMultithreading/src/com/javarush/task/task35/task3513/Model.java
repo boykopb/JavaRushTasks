@@ -6,6 +6,8 @@ import java.util.List;
 public class Model {
     private Tile[][] gameTiles;
     private static final int FIELD_WIDTH = 4;
+    int maxTile = 0;
+    int score = 0;
 
     public Model() {
         resetGameTiles();
@@ -41,6 +43,46 @@ public class Model {
             }
         }
         return emptyList;
+    }
+    
+    private void compressTiles(Tile[] tiles) {
+        int insertPosition = 0;
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            if (!tiles[i].isEmpty()) {
+                if (i != insertPosition) {
+                    tiles[insertPosition] = tiles[i];
+                    tiles[i] = new Tile();
+                }
+                insertPosition++;
+            }
+        }
+    }
+    
+    private void mergeTiles(Tile[] tiles) {
+        boolean isChanged = false;
+        for (int j = 0; j < 3; j++) {
+            if (tiles[j].value != 0 && tiles[j].value == tiles[j + 1].value) {
+                tiles[j].value = tiles[j].value * 2;
+                tiles[j + 1].value = 0;
+                score += tiles[j].value;
+
+                if (tiles[j].value > maxTile){ maxTile = tiles[j].value;}
+                isChanged = true;
+            }
+        }
+
+        if (isChanged) {
+            Tile temp;
+            for (int j = 0; j < 3; j++) {
+                if (tiles[j].value == 0 && tiles[j + 1].value != 0) {
+                    temp = tiles[j];
+                    tiles[j] = tiles[j + 1];
+                    tiles[j + 1] = temp;
+                }
+            }
+        }
+
+
     }
 
 
