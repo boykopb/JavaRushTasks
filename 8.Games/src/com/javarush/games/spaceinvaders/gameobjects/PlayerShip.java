@@ -31,7 +31,8 @@ public class PlayerShip extends Ship {
     public void kill() {
         if (this.isAlive) {
             this.isAlive = false;
-            setAnimatedView(ShapeMatrix.KILL_PLAYER_ANIMATION_FIRST,
+            setAnimatedView(false,
+                    ShapeMatrix.KILL_PLAYER_ANIMATION_FIRST,
                     ShapeMatrix.KILL_PLAYER_ANIMATION_SECOND,
                     ShapeMatrix.KILL_PLAYER_ANIMATION_THIRD,
                     ShapeMatrix.DEAD_PLAYER);
