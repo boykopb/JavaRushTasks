@@ -24,6 +24,11 @@ public class Model {
         addTile();
     }
 
+
+    public Tile[][] getGameTiles() {
+        return gameTiles;
+    }
+
     private void addTile() {
         List<Tile> list = getEmptyTiles();
         if (!list.isEmpty()) {
@@ -140,5 +145,28 @@ public class Model {
         rotateClockwise();
         rotateClockwise();
     }
+
+    private boolean canMove() {
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++) {
+                //если есть клетка со значением = 0, можем играть дальше
+                if (gameTiles[i][j].value == 0) return true;
+
+                //если значения в соседних клетках (горизонталь) равны, можем играть дальше
+                if (i < FIELD_WIDTH - 1
+                        && gameTiles[i][j].value == gameTiles[i + 1][j].value) {
+                    return true;
+                }
+
+                //если значения в соседних клетках (вертикаль) равны, можем играть дальше
+                if (j < FIELD_WIDTH - 1
+                        && gameTiles[i][j].value == gameTiles[i][j + 1].value){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
 }

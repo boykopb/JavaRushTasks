@@ -20,7 +20,7 @@ public class SpaceInvadersGame extends Game {
     private boolean isGameStopped;
     private int animationsCount;
     private List<Bullet> playerBullets;
-    private static final int PLAYER_BULLETS_MAX = 1;
+    private static final int PLAYER_BULLETS_MAX = 10;
 
 
     private void drawField() {
@@ -100,12 +100,22 @@ public class SpaceInvadersGame extends Game {
         playerBullets.removeIf(bullet -> !bullet.isAlive || bullet.y + bullet.height < 0);
     }
 
+
     private void check() {
         playerShip.verifyHit(enemyBullets);
         enemyFleet.verifyHit(playerBullets);
         enemyFleet.deleteHiddenShips();
         removeDeadBullets();
         if (!playerShip.isAlive){
+            stopGameWithDelay();
+        }
+
+        if (enemyFleet.getBottomBorder() >= playerShip.y){
+            playerShip.kill();
+        }
+
+        if (enemyFleet.getShipsCount() == 0){
+            playerShip.win();
             stopGameWithDelay();
         }
 
