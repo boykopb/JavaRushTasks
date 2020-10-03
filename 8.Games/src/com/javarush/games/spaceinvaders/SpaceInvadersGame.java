@@ -20,7 +20,7 @@ public class SpaceInvadersGame extends Game {
     private boolean isGameStopped;
     private int animationsCount;
     private List<Bullet> playerBullets;
-    private static final int PLAYER_BULLETS_MAX = 10;
+    private static final int PLAYER_BULLETS_MAX = 1;
 
 
     private void drawField() {

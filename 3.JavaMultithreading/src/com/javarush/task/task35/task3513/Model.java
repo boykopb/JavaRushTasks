@@ -146,7 +146,7 @@ public class Model {
         rotateClockwise();
     }
 
-    private boolean canMove() {
+    public boolean canMove() {
         for (int i = 0; i < FIELD_WIDTH; i++) {
             for (int j = 0; j < FIELD_WIDTH; j++) {
                 //если есть клетка со значением = 0, можем играть дальше
