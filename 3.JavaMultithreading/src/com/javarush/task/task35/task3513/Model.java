@@ -1,16 +1,21 @@
 package com.javarush.task.task35.task3513;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Model {
     private Tile[][] gameTiles;
     private static final int FIELD_WIDTH = 4;
     int maxTile = 0;
     int score = 0;
+    private Stack<Tile[][]> previousStates;
+    private Stack<Integer> previousScores;
+    private boolean isSaveNeeded = true;
+
 
     public Model() {
         resetGameTiles();
+        previousStates = new Stack();
+        previousScores = new Stack();
     }
 
     void resetGameTiles() {
@@ -110,6 +115,9 @@ public class Model {
 
     public void left() {
         int countOfActions = 0;
+        if (isSaveNeeded) {
+            saveState(gameTiles);
+        }
         for (int i = 0; i < FIELD_WIDTH; i++) {
 
             if (compressTiles(gameTiles[i])) {
@@ -120,9 +128,15 @@ public class Model {
                 countOfActions++;
             }
         }
-        if (countOfActions > 0) addTile();
+        if (countOfActions > 0) {
+            addTile();
+        }
+        isSaveNeeded = true;
+
     }
+
     public void right() {
+        saveState(gameTiles);
         rotateClockwise();
         rotateClockwise();
         left();
@@ -131,6 +145,7 @@ public class Model {
     }
 
     public void up() {
+        saveState(gameTiles);
         rotateClockwise();
         rotateClockwise();
         rotateClockwise();
@@ -139,6 +154,7 @@ public class Model {
     }
 
     public void down() {
+        saveState(gameTiles);
         rotateClockwise();
         left();
         rotateClockwise();
@@ -160,7 +176,7 @@ public class Model {
 
                 //если значения в соседних клетках (вертикаль) равны, можем играть дальше
                 if (j < FIELD_WIDTH - 1
-                        && gameTiles[i][j].value == gameTiles[i][j + 1].value){
+                        && gameTiles[i][j].value == gameTiles[i][j + 1].value) {
                     return true;
                 }
             }
@@ -168,5 +184,75 @@ public class Model {
         return false;
     }
 
+    private void saveState(Tile[][] tiles) {
+        Tile[][] tempTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++) {
+                tempTiles[i][j] = new Tile(tiles[i][j].value);
+            }
+        }
+        previousStates.push(tempTiles);
+        previousScores.push(score);
+        isSaveNeeded = false;
 
+    }
+
+
+    public void rollback() {
+        if (!previousScores.empty() && !previousStates.empty()) {
+            score = previousScores.pop();
+            gameTiles = previousStates.pop();
+        }
+    }
+
+    public void randomMove() {
+        int n = ((int) (Math.random() * 100)) % 4;
+        switch (n) {
+            case 0:
+                left();
+                break;
+            case 1:
+                right();
+                break;
+            case 2:
+                up();
+                break;
+            case 3:
+                down();
+                break;
+        }
+    }
+
+    private boolean hasBoardChanged() {
+        Tile[][] prevTile = previousStates.peek();
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++) {
+                if (gameTiles[i][j].value != prevTile[i][j].value) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private MoveEfficiency getMoveEfficiency(Move move) {
+        MoveEfficiency result = new MoveEfficiency(-1, 0, move);
+
+        move.move();
+        if (this.hasBoardChanged()) {
+            result = new MoveEfficiency(getEmptyTiles().size(), score, move);
+        }
+        rollback();
+        return result;
+    }
+
+    void autoMove() {
+        PriorityQueue<MoveEfficiency> queue = new PriorityQueue<>(4, Collections.reverseOrder());
+        queue.add(getMoveEfficiency(this::left));
+        queue.add(getMoveEfficiency(this::up));
+        queue.add(getMoveEfficiency(this::down));
+        queue.add(getMoveEfficiency(this::right));
+
+        queue.peek().getMove().move();
+    }
 }

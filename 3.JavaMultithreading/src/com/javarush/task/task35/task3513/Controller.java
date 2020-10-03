@@ -30,7 +30,7 @@ public class Controller extends KeyAdapter {
         model.resetGameTiles();
 
     }
-    
+
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) resetGame();
@@ -38,13 +38,31 @@ public class Controller extends KeyAdapter {
         if (!model.canMove()) view.isGameLost = true;
 
         if (!view.isGameLost && !view.isGameWon) {
-            if (e.getKeyCode() == KeyEvent.VK_LEFT) model.left();
-            if (e.getKeyCode() == KeyEvent.VK_RIGHT) model.right();
-            if (e.getKeyCode() == KeyEvent.VK_UP) model.up();
-            if (e.getKeyCode() == KeyEvent.VK_DOWN) model.down();
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_LEFT:
+                    model.left();
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    model.right();
+                    break;
+                case KeyEvent.VK_UP:
+                    model.up();
+                    break;
+                case KeyEvent.VK_DOWN:
+                    model.down();
+                    break;
+                case KeyEvent.VK_Z:
+                    model.rollback();
+                    break;
+                case KeyEvent.VK_R:
+                    model.randomMove();
+                    break;
+                case KeyEvent.VK_A:
+                    model.autoMove();
+                    break;
+            }
         }
         if (model.maxTile == WINNING_TILE) view.isGameWon = true;
-
 
         view.repaint();
     }

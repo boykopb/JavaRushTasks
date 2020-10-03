@@ -21,7 +21,7 @@ public class SpaceInvadersGame extends Game {
     private int animationsCount;
     private List<Bullet> playerBullets;
     private static final int PLAYER_BULLETS_MAX = 1;
-
+    private int score;
 
     private void drawField() {
         for (int y = 0; y < HEIGHT; y++) {
@@ -48,6 +48,7 @@ public class SpaceInvadersGame extends Game {
     }
 
     private void createGame() {
+        score = 0;
         createStars();
         enemyFleet = new EnemyFleet();
         enemyBullets = new ArrayList<>();
@@ -80,6 +81,7 @@ public class SpaceInvadersGame extends Game {
         check();
         Bullet fireShot = enemyFleet.fire(this);
         if (fireShot != null) enemyBullets.add(fireShot);
+        setScore(score);
         drawScene();
     }
 
@@ -100,21 +102,24 @@ public class SpaceInvadersGame extends Game {
         playerBullets.removeIf(bullet -> !bullet.isAlive || bullet.y + bullet.height < 0);
     }
 
-
+/*
+11. В методе check() значение поля score должно быть увеличено на результат,
+ который вернул вызов метода verifyHit(List<Bullet>) у объекта enemyFleet.
+ */
     private void check() {
         playerShip.verifyHit(enemyBullets);
-        enemyFleet.verifyHit(playerBullets);
+        score += enemyFleet.verifyHit(playerBullets);
         enemyFleet.deleteHiddenShips();
         removeDeadBullets();
-        if (!playerShip.isAlive){
+        if (!playerShip.isAlive) {
             stopGameWithDelay();
         }
 
-        if (enemyFleet.getBottomBorder() >= playerShip.y){
+        if (enemyFleet.getBottomBorder() >= playerShip.y) {
             playerShip.kill();
         }
 
-        if (enemyFleet.getShipsCount() == 0){
+        if (enemyFleet.getShipsCount() == 0) {
             playerShip.win();
             stopGameWithDelay();
         }
@@ -170,7 +175,7 @@ public class SpaceInvadersGame extends Game {
         if (x > WIDTH - 1 || x < 0 || y < 0 || y > HEIGHT - 1) {
             return;
         }
-            super.setCellValueEx(x, y, cellColor, value);
+        super.setCellValueEx(x, y, cellColor, value);
 
 
     }
