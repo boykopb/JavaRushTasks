@@ -42049,3 +42049,132 @@
 2020-10-10 10:06:29 INFO  ApacheHttpClient.completed(28) - responseCode = 200
 2020-10-10 10:06:30 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
 2020-10-10 10:06:32 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-10 10:07:32 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-10 10:08:32 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-10 10:09:32 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 400
+2020-10-10 10:10:18 INFO  ProjectStartupHandler.projectClosing(154) - ---------- Project closed ----------
+
+2020-10-10 10:10:18 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-10-10 10:10:18 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2020-10-11 11:46:41 INFO  ProjectStartupHandler.runActivity(73) - ---------- Project opened ----------
+2020-10-11 11:46:41 INFO  ProjectStartupHandler.runActivity(74) - ---------- Version 3.43 ----------
+
+2020-10-11 11:46:41 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(594) - Waiting for server response.
+2020-10-11 11:46:41 INFO  ApacheHttpClient.logout(625) - Waiting for server response.
+2020-10-11 11:46:42 INFO  ApacheHttpClient.login(247) - Waiting for server response.
+2020-10-11 11:46:42 INFO  ApacheHttpClient.login(251) - responseCode = 200
+2020-10-11 11:46:42 INFO  ApacheHttpClient.login(274) - JSESSIONID OK
+2020-10-11 11:46:42 INFO  ApacheHttpClient.refreshUserInfo(302) - responseCode = 200
+2020-10-11 11:46:42 INFO  ApacheHttpClient.refreshUserInfo(308) - User information received.
+2020-10-11 11:46:42 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2020-10-11 11:46:42 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-10-11 11:46:51 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-11 11:46:51 INFO  ApacheHttpClient.getFilteredTasks(333) - responseCode = 200
+2020-10-11 11:46:53 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-11 11:46:53 INFO  ApacheHttpClient.getTaskTemplateInfo(350) - responseCode = 200
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:46:55 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:47:25 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-11 11:48:25 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-11 11:49:25 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-11 11:50:25 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-11 11:51:25 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-11 11:52:08 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-11 11:52:08 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-10-11 11:52:10 INFO  ApacheHttpClient.completed(28) - responseCode = 200
+2020-10-11 11:52:10 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-10-11 11:52:13 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-11 11:52:13 INFO  ApacheHttpClient.getFilteredTasks(333) - responseCode = 200
+2020-10-11 11:52:15 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-11 11:52:15 INFO  ApacheHttpClient.getTaskTemplateInfo(350) - responseCode = 200
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:15 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:16 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-11 11:52:16 INFO  ApacheHttpClient.getTaskTemplateInfo(350) - responseCode = 200
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-11 11:52:16 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-11 11:52:20 INFO  ProjectStartupHandler.projectClosing(154) - ---------- Project closed ----------
+
+2020-10-11 11:52:20 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-10-11 11:52:20 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-10-11 11:52:20 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2020-10-12 09:25:24 INFO  ProjectStartupHandler.runActivity(73) - ---------- Project opened ----------
+2020-10-12 09:25:24 INFO  ProjectStartupHandler.runActivity(74) - ---------- Version 3.43 ----------
+
+2020-10-12 09:25:24 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(594) - Waiting for server response.
+2020-10-12 09:25:24 INFO  ApacheHttpClient.refreshUserInfo(302) - responseCode = 200
+2020-10-12 09:25:24 INFO  ApacheHttpClient.refreshUserInfo(308) - User information received.
+2020-10-12 09:25:24 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2020-10-12 09:25:24 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-10-12 09:26:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:27:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:28:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:29:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:30:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:31:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:32:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:33:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:33:28 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-12 09:34:18 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-12 09:34:19 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-10-12 09:34:22 INFO  ApacheHttpClient.completed(28) - responseCode = 200
+2020-10-12 09:34:22 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
+2020-10-12 09:34:24 INFO  ApacheHttpClient.sendEvent(527) - responseCode = 200
+2020-10-12 09:34:25 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-12 09:34:25 INFO  ApacheHttpClient.getFilteredTasks(333) - responseCode = 200
+2020-10-12 09:34:27 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
+2020-10-12 09:34:27 INFO  ApacheHttpClient.getTaskTemplateInfo(350) - responseCode = 200
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(515) - checkpoint 1
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(517) - checkpoint 2
+2020-10-12 09:34:27 INFO  TaskInfoSelectorMouseListener.run(523) - checkpoint 3
