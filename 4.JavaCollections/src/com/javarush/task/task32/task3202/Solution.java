@@ -12,6 +12,16 @@ public class Solution {
     }
 
     public static StringWriter getAllDataFromInputStream(InputStream is) throws IOException {
-        return null;
+        StringWriter writer = new StringWriter();
+        if (is != null) {
+            char[] buffer = new char[1024];
+            try (Reader reader = new BufferedReader(new InputStreamReader(is))) {
+                int n;
+                while ((n = reader.read(buffer)) != -1) {
+                    writer.write(buffer, 0, n);
+                }
+            }
+        }
+        return writer;
     }
 }
