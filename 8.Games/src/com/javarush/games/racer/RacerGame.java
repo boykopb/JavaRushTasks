@@ -7,6 +7,7 @@ public class RacerGame extends Game {
     public static final int HEIGHT = 64;
     public static final int CENTER_X = WIDTH / 2;
     public static final int ROADSIDE_WIDTH = 14;
+    private RoadMarking roadMarking;
 
 
     @Override
@@ -18,11 +19,13 @@ public class RacerGame extends Game {
 
 
     private void createGame() {
+        roadMarking = new RoadMarking();
         drawScene();
     }
 
     private void drawScene() {
         drawField();
+        roadMarking.draw(this);
     }
 
     private void drawField() {
@@ -37,5 +40,15 @@ public class RacerGame extends Game {
                 }
             }
         }
+    }
+
+
+    @Override
+    public void setCellColor(int x, int y, Color color) {
+
+        if (x > WIDTH - 1 || x < 0 || y > HEIGHT - 1 || y < 0) {
+            return;
+        }
+        super.setCellColor(x, y, color);
     }
 }
