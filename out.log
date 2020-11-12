@@ -43563,3 +43563,39 @@ com.homework.plugin.analytics.PluginWarningException: warning
 2020-11-11 08:48:17 INFO  ApacheHttpClient.completed(32) - responseCode = 200
 2020-11-11 08:48:17 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
 2020-11-11 08:48:49 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-11 08:49:49 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-11 08:50:42 INFO  ProjectStartupHandler.projectClosing(155) - ---------- Project closed ----------
+
+2020-11-11 08:50:42 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-11 08:50:42 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2020-11-12 09:03:30 INFO  ProjectStartupHandler.runActivity(74) - ---------- Project opened ----------
+2020-11-12 09:03:30 INFO  ProjectStartupHandler.runActivity(75) - ---------- Version 3.44 ----------
+
+2020-11-12 09:03:31 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-11-12 09:03:31 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-11-12 09:03:31 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-11-12 09:03:31 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-11-12 09:03:31 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-11-12 09:03:31 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-11-12 09:03:31 INFO  ApacheHttpClient.refreshUserInfo(305) - responseCode = 200
+2020-11-12 09:03:31 INFO  ApacheHttpClient.refreshUserInfo(311) - User information received.
+2020-11-12 09:03:31 INFO  ApacheHttpClient.startGA(36) - GAService started.
+2020-11-12 09:03:31 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-11-12 09:03:40 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-12 09:03:40 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-11-12 09:03:51 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-12 09:03:51 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-11-12 09:04:32 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-12 09:05:34 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-12 09:06:34 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-12 09:07:32 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-12 09:08:32 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-12 09:09:30 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-12 09:09:33 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-12 09:09:34 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-12 09:09:39 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-11-12 09:09:39 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-12 09:09:43 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-12 09:09:43 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-11-12 09:09:47 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-12 09:09:51 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
