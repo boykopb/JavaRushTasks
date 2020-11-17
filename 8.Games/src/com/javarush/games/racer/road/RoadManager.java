@@ -1,6 +1,7 @@
 package com.javarush.games.racer.road;
 
 import com.javarush.engine.cell.Game;
+import com.javarush.games.racer.PlayerCar;
 import com.javarush.games.racer.RacerGame;
 
 import java.util.ArrayList;
@@ -43,5 +44,48 @@ public class RoadManager {
         for (RoadObject item : items) {
             item.move(boost + item.speed);
         }
+        deletePassedItems();
     }
+
+
+    private boolean isThornExists() {
+        Boolean isThorn = false;
+        for (RoadObject item : items) {
+            if (item.type == RoadObjectType.THORN) {
+                isThorn = true;
+                break;
+            }
+        }
+        return isThorn;
+    }
+
+    private void generateThorn(Game game) {
+        int randomNumber = game.getRandomNumber(100);
+        if (randomNumber < 10 && !isThornExists()) {
+            addRoadObject(RoadObjectType.THORN, game);
+        }
+    }
+
+    public void generateNewRoadObjects(Game game) {
+        generateThorn(game);
+    }
+
+    private void deletePassedItems() {
+        for (RoadObject item : new ArrayList<>(items)) {
+            if (item.y >= RacerGame.HEIGHT) {
+                items.remove(item);
+            }
+        }
+    }
+
+
+    public boolean checkCrush(PlayerCar playerCar) {
+        for (RoadObject item : items) {
+            if (item.isCollision(playerCar)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
