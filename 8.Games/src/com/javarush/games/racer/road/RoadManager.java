@@ -14,13 +14,17 @@ public class RoadManager {
     private static final int FOURTH_LANE_POSITION = 44;
     private List<RoadObject> items = new ArrayList<>();
 
+
     private RoadObject createRoadObject(RoadObjectType type, int x, int y) {
-        Thorn thorn = null;
+        RoadObject result = null;
 
         if (type == RoadObjectType.THORN) {
-            thorn = new Thorn(x, y);
+            result = new Thorn(x, y);
         }
-        return thorn;
+        if (type != RoadObjectType.THORN) {
+            result = new Car(type, x, y);
+        }
+        return result;
 
     }
 
@@ -68,6 +72,7 @@ public class RoadManager {
 
     public void generateNewRoadObjects(Game game) {
         generateThorn(game);
+        generateRegularCar(game);
     }
 
     private void deletePassedItems() {
@@ -88,4 +93,10 @@ public class RoadManager {
         return false;
     }
 
+    private void generateRegularCar(Game game) {
+        if (game.getRandomNumber(100) < 30) {
+            int carTypeNumber = game.getRandomNumber(4);
+            addRoadObject(RoadObjectType.values()[carTypeNumber], game);
+        }
+    }
 }
