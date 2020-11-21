@@ -9,32 +9,26 @@ import java.util.List;
 
 public class RoadManager {
     public static final int LEFT_BORDER = RacerGame.ROADSIDE_WIDTH;
-    public static final int RIGHT_BORDER = RacerGame.WIDTH - LEFT_BORDER;
+    public static final int RIGHT_BORDER = RacerGame.WIDTH - RacerGame.ROADSIDE_WIDTH;
     private static final int FIRST_LANE_POSITION = 16;
     private static final int FOURTH_LANE_POSITION = 44;
+    private static final int PLAYER_CAR_DISTANCE = 12;
     private List<RoadObject> items = new ArrayList<>();
 
-
     private RoadObject createRoadObject(RoadObjectType type, int x, int y) {
-        RoadObject result = null;
-
         if (type == RoadObjectType.THORN) {
-            result = new Thorn(x, y);
+            return new Thorn(x, y);
+        } else {
+            return new Car(type, x, y);
         }
-        if (type != RoadObjectType.THORN) {
-            result = new Car(type, x, y);
-        }
-        return result;
-
     }
 
-
-    private void addRoadObject(RoadObjectType type, Game game) {
+    private void addRoadObject(RoadObjectType roadObjectType, Game game) {
         int x = game.getRandomNumber(FIRST_LANE_POSITION, FOURTH_LANE_POSITION);
-        int y = -1 * RoadObject.getHeight(type);
-        RoadObject newRoadObject = createRoadObject(type, x, y);
-        if (newRoadObject != null) {
-            items.add(newRoadObject);
+        int y = -1 * RoadObject.getHeight(roadObjectType);
+        RoadObject roadObject = createRoadObject(roadObjectType, x, y);
+        if (isRoadSpaceFree(roadObject)) {
+            items.add(roadObject);
         }
     }
 
@@ -83,7 +77,6 @@ public class RoadManager {
         }
     }
 
-
     public boolean checkCrush(PlayerCar playerCar) {
         for (RoadObject item : items) {
             if (item.isCollision(playerCar)) {
@@ -98,5 +91,14 @@ public class RoadManager {
             int carTypeNumber = game.getRandomNumber(4);
             addRoadObject(RoadObjectType.values()[carTypeNumber], game);
         }
+    }
+
+    private boolean isRoadSpaceFree(RoadObject object) {
+        for (RoadObject item : items) {
+            if (item.isCollisionWithDistance(object, PLAYER_CAR_DISTANCE)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
