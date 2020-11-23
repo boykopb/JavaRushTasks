@@ -34450,3 +34450,105 @@
 2020-09-24 12:13:54 INFO  ApacheHttpClient.getTask(480) - responseCode = 200
 2020-09-24 12:13:59 INFO  ApacheHttpClient.getWebResourceAsStream(494) - responseCode = 200
 2020-09-24 12:13:59 INFO  ApacheHttpClient.getFilteredTasks(333) - responseCode = 200
+2020-11-22 13:18:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:18:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:18:27 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:18:27 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-11-22 13:18:29 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:18:29 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:18:29 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-11-22 13:19:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:20:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:21:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:21:50 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:22:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:22:29 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:23:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:24:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:25:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:26:26 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:26:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:26:36 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:26:57 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:27:15 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:27:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:28:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:29:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:30:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:31:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:32:21 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:32:23 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:32:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:33:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:34:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:35:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:36:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:37:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:38:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:39:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:40:02 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:40:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:40:54 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:41:20 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:41:21 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-22 13:41:24 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-11-22 13:41:24 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-22 13:41:24 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:41:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:42:21 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:42:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:43:00 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:43:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:44:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:45:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:45:52 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:45:52 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-11-22 13:45:53 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-22 13:45:53 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:45:53 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-11-22 13:46:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:46:27 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:47:26 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-22 13:48:24 INFO  ProjectStartupHandler.projectClosing(155) - ---------- Project closed ----------
+
+2020-11-22 13:48:24 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-22 13:48:24 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-22 13:48:24 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-22 13:48:24 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-22 13:48:24 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-22 13:48:25 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2020-11-23 08:38:56 INFO  ProjectStartupHandler.runActivity(74) - ---------- Project opened ----------
+2020-11-23 08:38:56 INFO  ProjectStartupHandler.runActivity(75) - ---------- Version 3.44 ----------
+
+2020-11-23 08:38:56 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-11-23 08:38:57 INFO  ApacheHttpClient.refreshUserInfo(305) - responseCode = 200
+2020-11-23 08:38:57 INFO  ApacheHttpClient.refreshUserInfo(311) - User information received.
+2020-11-23 08:38:57 INFO  ApacheHttpClient.startGA(36) - GAService started.
+2020-11-23 08:38:57 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-11-23 08:38:57 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-23 08:39:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:40:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:41:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:42:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:43:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:44:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:45:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:46:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:47:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:48:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:49:20 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-23 08:49:20 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-11-23 08:49:21 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-23 08:49:22 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-11-23 08:49:22 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-11-23 08:49:22 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-23 08:49:22 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-11-23 08:49:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:50:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:51:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:52:57 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-11-23 08:53:03 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-11-23 08:53:03 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-23 08:53:04 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-11-23 08:53:04 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-11-23 08:53:05 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
