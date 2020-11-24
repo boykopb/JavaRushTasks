@@ -8,10 +8,12 @@ public class RacerGame extends Game {
     public static final int HEIGHT = 64;
     public static final int CENTER_X = WIDTH / 2;
     public static final int ROADSIDE_WIDTH = 14;
+    private static final int RACE_GOAL_CARS_COUNT = 40;
     private PlayerCar player;
     private RoadMarking roadMarking;
     private RoadManager roadManager;
     private boolean isGameStopped;
+    private FinishLine finishLine;
 
     @Override
     public void initialize() {
@@ -27,7 +29,11 @@ public class RacerGame extends Game {
             drawScene();
             return;
         }
+
         roadManager.generateNewRoadObjects(this);
+        if (roadManager.getPassedCarsCount() >= RACE_GOAL_CARS_COUNT) {
+            finishLine.show();
+        }
         moveAll();
         drawScene();
     }
@@ -36,6 +42,7 @@ public class RacerGame extends Game {
         roadMarking = new RoadMarking();
         player = new PlayerCar();
         roadManager = new RoadManager();
+        finishLine = new FinishLine();
         drawScene();
         setTurnTimer(40);
         isGameStopped = false;
@@ -46,6 +53,8 @@ public class RacerGame extends Game {
         roadMarking.draw(this);
         roadManager.draw(this);
         player.draw(this);
+        finishLine.draw(this);
+
     }
 
     private void drawField() {
@@ -66,6 +75,7 @@ public class RacerGame extends Game {
         roadMarking.move(player.speed);
         roadManager.move(player.speed);
         player.move();
+        finishLine.move(player.speed);
     }
 
     private void gameOver() {
