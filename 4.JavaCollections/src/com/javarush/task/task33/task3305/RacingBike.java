@@ -1,5 +1,5 @@
 package com.javarush.task.task33.task3305;
-
+/*
 public class RacingBike extends Motorbike {
     private String owner;
     private int age;
@@ -30,4 +30,4 @@ public class RacingBike extends Motorbike {
                 ", age=" + age +
                 '}';
     }
-}
+}*/

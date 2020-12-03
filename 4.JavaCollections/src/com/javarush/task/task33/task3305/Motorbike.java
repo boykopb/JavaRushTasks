@@ -1,5 +1,5 @@
 package com.javarush.task.task33.task3305;
-
+/*
 public class Motorbike extends Vehicle {
     private String owner;
 
@@ -26,4 +26,4 @@ public class Motorbike extends Vehicle {
                 ", owner='" + owner + '\'' +
                 '}';
     }
-}
+}*/

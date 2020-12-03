@@ -93,11 +93,10 @@ public class Space {
      * Метод возвращает общий список, который содержит все объекты игры
      */
     public List<BaseObject> getAllItems() {
-        ArrayList<BaseObject> list = new ArrayList<>();
+        ArrayList<BaseObject> list = new ArrayList<BaseObject>(ufos);
         list.add(ship);
         list.addAll(bombs);
         list.addAll(rockets);
-        list.addAll(ufos);
         return list;
     }
 
@@ -177,7 +176,26 @@ public class Space {
      * б) отрисовываем все объекты на холст.
      */
     public void draw(Canvas canvas) {
-        //тут нужно отрисовать все объекты игры
+        //draw game
+        for (int i = 0; i < width + 2; i++) {
+            for (int j = 0; j < height + 2; j++) {
+                canvas.setPoint(i, j, '.');
+            }
+        }
+
+        for (int i = 0; i < width + 2; i++) {
+            canvas.setPoint(i, 0, '-');
+            canvas.setPoint(i, height + 1, '-');
+        }
+
+        for (int i = 0; i < height + 2; i++) {
+            canvas.setPoint(0, i, '|');
+            canvas.setPoint(width + 1, i, '|');
+        }
+
+        for (BaseObject object : getAllItems()) {
+            object.draw(canvas);
+        }
     }
 
 
@@ -189,8 +207,8 @@ public class Space {
         this.ship = ship;
     }
 
-    public List<Ufo> getUfos() {
-        return ufos;
+    public ArrayList<Ufo> getUfos() {
+        return (ArrayList<Ufo>) ufos;
     }
 
     public int getWidth() {
@@ -201,12 +219,12 @@ public class Space {
         return height;
     }
 
-    public List<Bomb> getBombs() {
-        return bombs;
+    public ArrayList<Bomb> getBombs() {
+        return (ArrayList<Bomb>) bombs;
     }
 
-    public List<Rocket> getRockets() {
-        return rockets;
+    public ArrayList<Rocket> getRockets() {
+        return (ArrayList<Rocket>) rockets;
     }
 
     public static Space game;
