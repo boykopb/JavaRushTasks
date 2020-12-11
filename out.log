@@ -39057,3 +39057,231 @@ com.homework.plugin.analytics.PluginWarningException: warning
 2020-12-10 09:15:02 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
 2020-12-10 09:15:02 INFO  ApacheHttpClient.completed(32) - responseCode = 200
 2020-12-10 09:15:03 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:35 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-10 09:15:47 INFO  ProjectStartupHandler.projectClosing(155) - ---------- Project closed ----------
+
+2020-12-10 09:15:47 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:47 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:47 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:47 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-10 09:15:48 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2020-12-11 09:02:54 INFO  ProjectStartupHandler.runActivity(74) - ---------- Project opened ----------
+2020-12-11 09:02:54 INFO  ProjectStartupHandler.runActivity(75) - ---------- Version 3.44 ----------
+
+2020-12-11 09:02:54 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2020-12-11 09:02:54 INFO  ApacheHttpClient.refreshUserInfo(305) - responseCode = 200
+2020-12-11 09:02:54 INFO  ApacheHttpClient.refreshUserInfo(311) - User information received.
+2020-12-11 09:02:54 INFO  ApacheHttpClient.startGA(36) - GAService started.
+2020-12-11 09:02:54 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-12-11 09:02:55 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:03:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:04:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:05:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:06:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:07:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:07:55 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:07:55 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:07:58 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:08:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:09:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:10:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:11:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:12:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:13:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:14:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:15:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:16:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:17:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:18:35 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:18:35 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:18:52 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:18:52 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38
+2020-12-11 09:18:52 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3801
+2020-12-11 09:18:52 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:18:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:19:04 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:19:04 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:19:06 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:19:07 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:19:23 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:19:24 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:19:24 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:19:25 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:19:25 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:19:25 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:19:27 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:19:27 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:19:28 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:19:28 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3802
+2020-12-11 09:19:28 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:19:28 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:19:48 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:19:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:19:56 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:19:57 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:19:57 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:19:57 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:19:58 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:19:58 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:19:59 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:19:59 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:20:00 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:20:00 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3803
+2020-12-11 09:20:00 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:20:05 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:20:05 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:20:07 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:20:08 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:20:15 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:20:35 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:20:37 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:20:38 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:20:38 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:20:39 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:20:39 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:20:39 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:20:40 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:20:40 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:20:41 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:20:41 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3804
+2020-12-11 09:20:42 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:20:49 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:20:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:21:02 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:21:43 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:21:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:22:01 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:22:25 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:22:25 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:22:26 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:22:26 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:22:26 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:22:32 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:22:33 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:22:33 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:22:33 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3805
+2020-12-11 09:22:34 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:22:34 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:22:43 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:22:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:22:59 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:23:07 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:23:07 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:23:08 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:23:09 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:23:09 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:23:11 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:23:11 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:23:12 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:23:12 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3806
+2020-12-11 09:23:12 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:23:14 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:23:14 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:23:15 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:23:16 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:23:31 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:23:33 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:23:33 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:23:34 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:23:34 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:23:34 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:23:39 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:23:40 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:23:41 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:23:41 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3807
+2020-12-11 09:23:41 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:23:49 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:23:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:24:19 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:24:49 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:24:49 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:24:49 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:24:50 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:24:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:25:00 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:25:00 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:25:01 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:25:01 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:25:02 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:25:08 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:25:08 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:25:09 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:25:09 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3808
+2020-12-11 09:25:09 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:25:14 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:25:23 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:25:31 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:25:31 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:25:32 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:25:32 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:25:32 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:25:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:26:07 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:26:07 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:26:08 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:26:08 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3809
+2020-12-11 09:26:08 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:26:08 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:26:15 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:26:15 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:26:17 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:26:19 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:26:24 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:26:25 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:26:25 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:26:26 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:26:26 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:26:26 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:26:28 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:26:28 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:26:28 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:26:28 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3810
+2020-12-11 09:26:29 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:26:40 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:26:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:27:04 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:27:06 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:27:09 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:27:12 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:27:12 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:27:12 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:27:13 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:27:13 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:27:14 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:27:14 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:27:15 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:27:15 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3811
+2020-12-11 09:27:15 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:27:16 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:27:27 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:27:36 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:27:47 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:27:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2020-12-11 09:28:09 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:28:12 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:28:12 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:28:12 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:28:12 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:28:12 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:28:17 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:28:17 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2020-12-11 09:28:18 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2020-12-11 09:28:18 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :C:/Users/boyko.LASPTECH/IdeaProjects/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task38/task3812
+2020-12-11 09:28:18 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:28:28 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:28:41 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:28:44 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2020-12-11 09:28:44 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:28:45 INFO  ApacheHttpClient.completed(32) - responseCode = 200
+2020-12-11 09:28:45 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2020-12-11 09:28:45 INFO  AnalyticsService.run(81) - Error while sending analyticsMessage to log-stash : error in server. Status code :429
+2020-12-11 09:28:54 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
